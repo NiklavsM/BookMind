@@ -7,9 +7,10 @@ import BookCard from './components/BookCard';
 export default function App() {
 
   useEffect(() => {
-    loadBooks().then(r => {});
-    // getBooks().then(r => {});
+    // loadBooks().then(r => {});
+    getBooks().then(r => setBooks(r));
   })
+
   const [books, setBooks] = useState<any[]>([]);
 
   const loadBooks = async () => {
@@ -38,17 +39,25 @@ export default function App() {
   }
 
   const getBooks = async () => {
-    try {
-      const responseJSON = await getAllEbooks("Sapiens: A Brief History of Humankind");
-      let books = responseJSON.items;
-      let size = books.length;
+    let booksArr: any = []
 
-      for(let i = 0; i < size; i++) {
+      const responseJSON = await getAllEbooks("Harry Potter");
+      let books :any = [] = responseJSON.items;
+      // let size = books.length;
+      let book: any = {}
+
+      for(let i = 0; i < books.length; i++) {
+        book = {}
+        book["id"] = i;
+        book["name"] = responseJSON.items[i].volumeInfo.title;
+        book["description"] = responseJSON.items[i].volumeInfo.description;
         console.log(responseJSON.items[i].volumeInfo.title);
+        booksArr.push(book);
       }
-    } catch (error) {
 
-    }
+      console.log("HERE" + booksArr)
+
+    return booksArr;
   }
 
   const bookRender = ({item}: any) => (
