@@ -1,6 +1,7 @@
+require('dotenv').config()
 const { MongoClient } = require("mongodb");
 
-const uri = "mongodb+srv://AlinaVarkki:LevelUpSociety@cluster0.wn3kg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const uri = "mongodb+srv://"+ process.env.databaseName +":"+ process.env.databasePassword +"@cluster0.wn3kg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 const client = new MongoClient(uri, {
     useNewUrlParser: true,
@@ -20,6 +21,7 @@ async function run() {
         // const book = await questions.updateOne(query, {$set: {field: "info"}})
         //add to array
         const book = await questions.updateOne(query, {$addToSet: {"stats.badges": "thisIsNew"}})
+        console.log(book)
     } finally {
         await client.close();
     }
