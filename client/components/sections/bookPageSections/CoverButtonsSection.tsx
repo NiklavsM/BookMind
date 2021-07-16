@@ -1,8 +1,14 @@
 import * as React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import BookWIthPointsCardFullBookScreen from '../../cards/cardParts/BookWIthPointsCardFullBookScreen';
+import { NavigationInjectedProps } from 'react-navigation';
 
-const CoverButtonsSection = ({imgUrl}) => {
+interface CoverButtonsSection {
+    imgUrl: string,
+    navigation?: any,
+}
+
+const CoverButtonsSection = ({imgUrl, navigation}: CoverButtonsSection & NavigationInjectedProps) => {
 
     return (
         <View>
@@ -12,16 +18,17 @@ const CoverButtonsSection = ({imgUrl}) => {
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => {
+                            navigation.navigate("BookQuiz")
                             console.log("clicked")
                         }}>
-                        <Text>Add a question</Text>
+                        <Text>Take a quiz</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => {
                             console.log("clicked")
                         }}>
-                        <Text>Take a quiz</Text>
+                        <Text>Add a question</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={styles.button}

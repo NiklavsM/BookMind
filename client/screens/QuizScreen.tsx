@@ -1,70 +1,37 @@
 import * as React from 'react';
 import {View} from "react-native"
-import Screen from '../components/Screen';
-import QuizeSingleChoice from "react-native-react-native-quiz-single-choice";
+import Quiz from '../quiz/screens/Quiz'
 
 const QuizScreen = () => {
 
-    const data = [
-        {
-            question:
-                "How good is this question ?",
-            optionA: "Bad",
-            optionB: "Fine",
-            optionC: "OK",
-            optionD: "good",
-            answer: "great",
-        },
-        {
-            question: "How is this library",
-            optionA: "Dunno0",
-            optionB: "Dunnou",
-            optionC: "Dunnpo",
-            optionD: "Dunnooo",
-            answer: "Dunnooooo",
-        },
-        {
-            question: "Who is the wifey ?",
-            optionA: "Marta",
-            optionB: "It's Marta",
-            optionC: "Martaaaa",
-            optionD: "Marty",
-            answer: "Martawifey",
-        },
-    ];
-
     return (
-        <QuizeSingleChoice
-            containerStyle={{ backgroundColor: "rgba(255,0,0,0.42)", paddingTop: 30 }}
-            questionTitleStyle={{ fontSize: 22, color: "#FFF" }}
-            responseStyle={{
-                borderRadius: 15,
-            }}
-            responseTextStyle={{ fontSize: 12, fontWeight: "normal" }}
-            selectedResponseStyle={{
-                borderRadius: 15,
-                backgroundColor: "#fa5541",
-            }}
-            selectedResponseTextStyle={{
-                fontSize: 14,
-                fontWeight: "normal",
-            }}
-            responseRequired={true}
-            nextButtonText={"Next"}
-            nextButtonStyle={{ backgroundColor: "#06d755" }}
-            nextButtonTextStyle={{ color: "#FFF" }}
-            prevButtonText={"Prev"}
-            prevButtonStyle={{ backgroundColor: "#fa5541" }}
-            prevButtonTextStyle={{ color: "#FFF" }}
-            endButtonText={"Done"}
-            endButtonStyle={{ backgroundColor: "#000" }}
-            endButtonTextStyle={{ color: "#FFF" }}
-            buttonsContainerStyle={{ marginTop: "auto"}}
-            onEnd={(results) => {
-                console.log(results);
-            }}
-            data={data}
-        />
+            <Quiz allQuestions={[
+                {
+                    question: "What’s the biggest planet in our solar system?",
+                    options: ["Jupiter","Saturn","Neptune","Mercury"],
+                    correct_option: "Jupiter"
+                },
+                {
+                    question: "What attraction in India is one of the famus in the world?",
+                    options: ["Chand Minar","Taj Mahal","Stadium"],
+                    correct_option: "Taj Mahal"
+                },
+                {
+                    question: "What land animal can open its mouth the widest?",
+                    options: ["Alligator","Crocodile","Baboon","Hippo"],
+                    correct_option: "Hippo"
+                },
+                {
+                    question: "What is the largest animal on Earth?",
+                    options: ["The African elephant","The blue whale","The sperm whale","The giant squid"],
+                    correct_option: "The blue whale"
+                },
+                {
+                    question: "What is the only flying mammal?",
+                    options: ["The bat","The flying squirrel","The bald eagle","The colugo"],
+                    correct_option: "The bat"
+                }
+            ]}/>
     )
 }
 
