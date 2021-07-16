@@ -3,22 +3,19 @@ import { SafeAreaView, ScrollView, StyleSheet } from "react-native"
 import BookCardFeed from '../components/cards/BookCardFeed';
 
 
-const BooksScreen = ({route, navigation}) => {
+const BooksScreen = ({route}) => {
     const books = route.params;
     return (
         <SafeAreaView style={styles.screen}>
             <ScrollView
                 showsVerticalScrollIndicator={false}>
-                {books.map(book =>
-                    <BookCardFeed key={book.id}
+                    {books.map(book =>
+                        <BookCardFeed key={book.id}
                                   title={book.volumeInfo.title}
-                                  author={book.volumeInfo?.authors?.[0]}
+                                  author={book.volumeInfo?.authors[0]}
                                   imgUrl={book.volumeInfo.imageLinks?.thumbnail}
-                                  category={book.volumeInfo?.categories?.[0]}
-                                  description={book.volumeInfo?.description}
-                                  navigation={navigation}
-                    />
-                )}
+                        />
+                    )}
             </ScrollView>
         </SafeAreaView>
     )

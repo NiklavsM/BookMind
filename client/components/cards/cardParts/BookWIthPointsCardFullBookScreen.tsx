@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Image, StyleSheet, TouchableWithoutFeedback, View } from "react-native"
 import PointsCircle from '../../PointsCircle';
 
-const BookWIthPointsCardFullBookScreen = ({imgUrl}) => {
+const BookWIthPointsCardFullBookScreen = () => {
 
     return (
         <TouchableWithoutFeedback>
@@ -14,7 +14,7 @@ const BookWIthPointsCardFullBookScreen = ({imgUrl}) => {
                 </View>
                 <View style={styles.lowerPart}>
                     <Image style={styles.image}
-                           source={{uri: imgUrl}}/>
+                           source={{uri: 'https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-july-2019/large/bbcjuly19verynice.jpg?1384968217'}}/>
                 </View>
             </View>
 
@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         width: 205,
         height: 325,
-        marginTop: 18
     },
     upperPart: {
         height: "6%",

@@ -1,20 +1,20 @@
 import * as React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
-const BookSummarySection = ({title, author, category, description}) => {
+const BookSummarySection = () => {
 
     return (
         <View>
-            <Text style={styles.bookTitle}>{title}</Text>
-            <Text>{author}</Text>
+            <Text style={styles.bookTitle}>Title</Text>
+            <Text>Author</Text>
             <TouchableOpacity
                 style={styles.category}
                 onPress={() => {
                     console.log("clicked")
                 }}>
-                <Text>{category}</Text>
+                <Text>Politics</Text>
             </TouchableOpacity>
-            <Text>{description}</Text>
+            <Text>Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary Short summary </Text>
         </View>
     )
 }

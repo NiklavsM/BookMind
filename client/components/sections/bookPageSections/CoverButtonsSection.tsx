@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { StyleSheet, View, Text, Button, TouchableHighlight, TouchableOpacity } from "react-native"
 import BookWIthPointsCardFullBookScreen from '../../cards/cardParts/BookWIthPointsCardFullBookScreen';
 
-const CoverButtonsSection = ({imgUrl}) => {
+const CoverButtonsSection = () => {
 
     return (
         <View>
+            <Text style={styles.bookTitle}>Book title</Text>
             <View style={styles.coverAndQuestions}>
-                <BookWIthPointsCardFullBookScreen imgUrl={imgUrl}/>
+                <BookWIthPointsCardFullBookScreen/>
                 <View style={styles.buttons}>
                     <TouchableOpacity
                         style={styles.button}
@@ -37,7 +38,14 @@ const CoverButtonsSection = ({imgUrl}) => {
 }
 
 const styles = StyleSheet.create({
-    section: {},
+    section: {
+
+    },
+    bookTitle: {
+        fontSize: 35,
+        fontWeight: 'bold',
+        paddingBottom: 25
+    },
     coverAndQuestions: {
         flexDirection: "row",
     },

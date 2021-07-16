@@ -141,7 +141,6 @@ export default class GoogleBookSearch extends React.Component {
                         return true
                     }
                 })
-                console.log(booksArray)
                 if (self.props.limit !== -1) {
                     if (booksArray.length > self.props.limit) {
                         booksArray = booksArray.slice(0, self.props.limit);
@@ -190,7 +189,6 @@ const styles = StyleSheet.create({
     container: {
         // zIndex: 10,
         overflow: 'visible',
-        marginTop: 24,
         borderTopWidth: 0,
         borderBottomWidth: 0,
         height: 50,
@@ -212,7 +210,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         lineHeight: 22.5,
         paddingBottom: 0,
-        paddingHorizontal: 8,
+        paddingHorizontal: 15,
         flex: 1
     },
     resultContainer: {

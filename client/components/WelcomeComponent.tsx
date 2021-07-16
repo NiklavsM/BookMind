@@ -1,17 +1,17 @@
 import * as React from "react";
+import {useContext} from "react";
 import {Image, StyleSheet, Text, View} from "react-native"
+import Context from "../context/context";
 
-interface WelcomeComponentProps {
-    name: string,
-    profilePicUrl: string,
-}
 
-const WelcomeComponent = ({name, profilePicUrl}: WelcomeComponentProps) => {
+const WelcomeComponent = () => {
+
+    const context = useContext(Context);
 
     return (
         <View style={styles.container}>
-            <Text >Hi {name}!</Text>
-            <Image style={{height: 50, width: 50}} source={{uri: profilePicUrl}}/>
+            <Text style={styles.welcomeText}>Hi {context.name}!</Text>
+            <Image style={{height: 50, width: 50}} source={{uri: context.profileUrl}}/>
         </View>
     )
 }
@@ -20,7 +20,11 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
         justifyContent: "space-between",
-        height: '3%'
+        height: 30
+    },
+    welcomeText: {
+        fontWeight: "bold",
+        fontSize: 20,
     }
 })
 
