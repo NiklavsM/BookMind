@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import {Dimensions, FlatList, StyleSheet, Text, TextInput, TouchableHighlight, View} from 'react-native';
 import BookSearch from './BookSearch'
+import {Keyboard} from "react-native";
 
 const {height, width} = Dimensions.get('screen');
 
@@ -72,9 +73,13 @@ export default class GoogleBookSearch extends React.Component {
             smallThumbnail: thumbnail.small,
             thumbnail: thumbnail.normal
         }
+
         return (
             <TouchableHighlight
-                onPress={() => this.onResultPress(obj)}
+                keyboardShouldPersistTaps='handled'
+                onPress={() => {
+                    this.onResultPress(obj)}
+                }
                 underlayColor={'transparent'}
             >
                 <View style={[styles.resultItem, {...this.props.resultContainerStyle}]}>

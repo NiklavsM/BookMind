@@ -1,12 +1,11 @@
 import * as React from 'react';
 import {StyleSheet, Text, View} from "react-native"
 import ActionCard from '../../cards/ActionCard';
-import {defaultStyles} from "../../../styles/styles";
 
 const ActionSection = () => {
 
     return (
-        <View style={defaultStyles.container}>
+        <View >
             <View style={styles.upperSection}>
                 <View style={styles.upperTextSection}>
                     <Text style={styles.bigBoldFont}>Actions/Updates</Text>

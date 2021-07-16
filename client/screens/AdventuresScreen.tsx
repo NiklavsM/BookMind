@@ -1,15 +1,15 @@
 import * as React from 'react';
-import {Text} from "react-native"
+import { Text } from "react-native"
 import Screen from '../components/Screen';
-import ActionSection from '../components/sections/ActionSection';
-import {NavigationInjectedProps} from "react-navigation";
+import { NavigationInjectedProps } from 'react-navigation';
+import BookWithPointsInFeed from '../components/cards/BookWithPointsInFeed';
 
 const AdventuresScreen = ({navigation}: NavigationInjectedProps) => {
 
     return (
         <Screen>
             <Text>Adventures Screen</Text>
-            <ActionSection/>
+            <BookWithPointsInFeed/>
         </Screen>
     )
 }
