@@ -1,13 +1,12 @@
 import * as React from "react";
-import {FlatList, View} from "react-native"
+import { FlatList, View } from "react-native"
 import Screen from "../components/Screen";
-import {defaultStyles} from "../styles/styles";
-import {API_BOOKS_KEY} from "../api/APIConfig";
+import { API_BOOKS_KEY } from "../api/APIConfig";
 import AchievementsSection from "../components/sections/dashboardSections/AchievementsSection";
 import TrendingBooksSection from "../components/sections/dashboardSections/TrendingBooksSection";
 import ChallengeSection from "../components/sections/dashboardSections/ChallengeSection";
 import ActionSection from "../components/sections/dashboardSections/ActionSection";
-import {NavigationInjectedProps} from "react-navigation";
+import { NavigationInjectedProps } from "react-navigation";
 import GoogleBookSearch from '../GoogleBooksLibrary/GoogleBookSearch'
 
 const DashboardScreen = ({navigation}: NavigationInjectedProps) => {
@@ -23,6 +22,7 @@ const DashboardScreen = ({navigation}: NavigationInjectedProps) => {
                 }
             />
             <FlatList
+                showsVerticalScrollIndicator={false}
                 ListHeaderComponent={
                     <View>
 

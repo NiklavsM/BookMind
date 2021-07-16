@@ -1,9 +1,14 @@
 import * as React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
-import BookWIthPointsCardFullBookScreen from './cardParts/BookWIthPointsCardFullBookScreen';
+import { StyleSheet, Text, View } from "react-native"
 import BookWithPointsInFeed from './cardParts/BookWithPointsInFeed';
 
-const BookCardFeed = ({title, author, imgUrl}: any) => {
+interface BookCardFeedProps {
+    title: string,
+    imgUrl: string,
+    author?: string,
+}
+
+const BookCardFeed = ({title, author, imgUrl}: BookCardFeedProps) => {
 
     return (
         <View style={styles.card}>
@@ -24,7 +29,7 @@ const styles = StyleSheet.create({
     card: {
         flexDirection: "row",
         width: '100%',
-        marginBottom: 16
+        marginTop: 12,
     },
     category: {
         height: 35,
