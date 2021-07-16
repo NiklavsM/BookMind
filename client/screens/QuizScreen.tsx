@@ -52,7 +52,7 @@ const QuizScreen = () => {
             responseRequired={true}
             nextButtonText={"Next"}
             nextButtonStyle={{ backgroundColor: "#06d755" }}
-            nextButtonTextStyle={{ color: "#FFF", height: 50 }}
+            nextButtonTextStyle={{ color: "#FFF" }}
             prevButtonText={"Prev"}
             prevButtonStyle={{ backgroundColor: "#fa5541" }}
             prevButtonTextStyle={{ color: "#FFF" }}

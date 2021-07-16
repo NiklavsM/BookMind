@@ -136,6 +136,8 @@ export default class GoogleBookSearch extends React.Component {
                 booksArray = booksArray.filter(book => {
                     if (booksSet.has(book.volumeInfo.title)) {
                         return false
+                    } if(book.volumeInfo.title.length > 100) {
+                        return false
                     } else {
                         booksSet.add(book.volumeInfo.title)
                         return true
