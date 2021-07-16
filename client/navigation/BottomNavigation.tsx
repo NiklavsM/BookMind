@@ -1,74 +1,44 @@
 import * as React from "react";
-import {useState} from "react";
-import {SafeAreaView, StatusBar, StyleSheet, View} from "react-native"
-import DashboardScreen from '../screens/DashboardScreen';
+import {StyleSheet} from "react-native"
 import AdventuresScreen from '../screens/AdventuresScreen';
 import StatsScreen from '../screens/StatsScreen';
-import BottomMenuButton from '../components/BottomMenuButton';
+import {NavigationInjectedProps} from "react-navigation";
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Feather from 'react-native-vector-icons/Feather';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import DashboardStack from "./DashboardStack";
 
-
-const BottomNavigation = () => {
-
-    const [chosen, changeChosen] = useState("DashboardScreen");
-
-    const content = () => {
-        switch (chosen) {
-            case "DashboardScreen":
-                return (<DashboardScreen/>);
-
-            case "AdventuresScreen":
-                return (<AdventuresScreen/>);
-
-            default:
-                return (<StatsScreen/>);
-
-        }
-    }
+const BottomNavigation = ({navigation}: NavigationInjectedProps) => {
+    const Tab = createBottomTabNavigator();
 
     return (
-        <SafeAreaView style={styles.screen}>
-            <StatusBar/>
-            <View style={styles.main}>
-                {content()}
-            </View>
-            <View style={styles.bottom}>
-                <View style={styles.row}>
-                    <BottomMenuButton font="Logo" name="menu" text="Dashboard"
-                                      callback={() => changeChosen("DashboardScreen")}
-                                      color={chosen === "DashboardScreen" ? "#009e93" : "black"}
-                    />
-                    <BottomMenuButton font="Logo" name="menu" text="Adventures"
-                                      callback={() => changeChosen("AdventuresScreen")}
-                                      color={chosen === "AdventuresScreen" ? "#009E93FF" : "black"}
-                    />
-                    <BottomMenuButton font="Logo" name="menu" text="Stats" callback={() => changeChosen("StatsScreen")}
-                                      color={chosen === "StatsScreen" ? "#009E93FF" : "black"}
-                    />
-                </View>
-            </View>
-        </SafeAreaView>
+        <Tab.Navigator initialRouteName="Dashboard"
+                       screenOptions={({route}) => ({
+                           tabBarIcon: ({focused, color, size}) => {
+                               let iconName;
+
+                               if (route.name === 'Dashboard') {
+                                   return <MaterialIcons name='house' size={size} color={color}/>;
+                               } else if (route.name === 'Your Adventures') {
+                                   iconName = focused ? 'book-open' : 'book';
+                                   return <Feather name={iconName} size={size} color={color}/>;
+                               } else if (route.name === 'Achievements') {
+                                   iconName = focused ? 'star' : 'star';
+                                   return <Fontisto name={iconName} size={size} color={color}/>;
+                               }
+                           },
+                       })}
+                       tabBarOptions={{
+                           activeTintColor: 'tomato',
+                           inactiveTintColor: 'gray',
+                       }}
+        >
+            <Tab.Screen name="Dashboard" component={DashboardStack}/>
+            <Tab.Screen name="Your Adventures" component={AdventuresScreen}/>
+            <Tab.Screen name="Achievements" component={StatsScreen}/>
+        </Tab.Navigator>
     )
 }
-
-const styles = StyleSheet.create({
-    screen: {
-        height: '100%',
-        flex: 1,
-    },
-    main: {
-        height: '87.5%',
-        paddingHorizontal: "2.5%"
-    },
-    bottom: {
-        height: '12.5%',
-        width: '100%',
-        alignItems: 'center',
-    },
-    row: {
-        flex: 1,
-        flexDirection: 'row',
-        backgroundColor: '#e8e8e8'
-    },
-});
 
 export default BottomNavigation;

@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from "react-native"
-import AchievementsFeed from '../feeds/AchievementsFeed';
+import {StyleSheet, Text, View} from "react-native"
 import ActionCard from '../cards/ActionCard';
+import {defaultStyles} from "../../styles/styles";
 
 const ActionSection = () => {
 
     return (
-        <View style={styles.container}>
+        <View style={defaultStyles.container}>
             <View style={styles.upperSection}>
                 <View style={styles.upperTextSection}>
                     <Text style={styles.bigBoldFont}>Actions/Updates</Text>
@@ -22,11 +22,6 @@ const ActionSection = () => {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        width: '100%',
-        paddingBottom: "15%"
-    },
     upperSection: {
         paddingBottom: 10
     },

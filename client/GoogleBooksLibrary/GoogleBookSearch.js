@@ -58,10 +58,10 @@ export default class GoogleBookSearch extends React.Component {
             small: "",
             normal: ""
         }
-        if (book.volumeInfo != undefined
-            && book.volumeInfo.imageLinks != undefined) {
-            thumbnail.small = book.volumeInfo.imageLinks.smallThumbnail != undefined ? book.volumeInfo.imageLinks.smallThumbnail : null;
-            thumbnail.normal = book.volumeInfo.imageLinks.thumbnail != undefined ? book.volumeInfo.imageLinks.thumbnail : null;
+        if (book.volumeInfo !== undefined
+            && book.volumeInfo.imageLinks !== undefined) {
+            thumbnail.small = book.volumeInfo.imageLinks.smallThumbnail !== undefined ? book.volumeInfo.imageLinks.smallThumbnail : null;
+            thumbnail.normal = book.volumeInfo.imageLinks.thumbnail !== undefined ? book.volumeInfo.imageLinks.thumbnail : null;
         }
         let obj = {
             id: item.id,
@@ -100,7 +100,7 @@ export default class GoogleBookSearch extends React.Component {
 
     onTextChange(val) {
         this.setState({searchval: val})
-        if (val.length == 0) {
+        if (!(val.length != 0)) {
             this.setState({showcontainer: false})
         }
         if (val.length > 2) {
@@ -126,13 +126,11 @@ export default class GoogleBookSearch extends React.Component {
         if (val.length > 2) {
             let res = await BookSearch.searchbook(val, this.props.apikey);
             if (res.status
-                && res.data != undefined) {
-                console.log(res.data)
+                && res.data !== undefined) {
                 var booksArray = res.data;
-                if (self.props.limit != -1) {
+                if (self.props.limit !== -1) {
                     if (booksArray.length > self.props.limit) {
-                        let sliced = booksArray.slice(0, self.props.limit)
-                        booksArray = sliced;
+                        booksArray = booksArray.slice(0, self.props.limit);
                     }
                 }
                 this.setState({gbooks: booksArray}, () => {
