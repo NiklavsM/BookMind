@@ -4,7 +4,7 @@ import DashboardScreen from "../screens/DashboardScreen";
 import BooksScreen from "../screens/BooksScreen";
 import BookScreen from '../screens/BookScreen';
 
-const DashboardStack = () => {
+const DashboardStack = ({route}) => {
 
     const Stack = createStackNavigator();
 

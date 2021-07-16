@@ -13,8 +13,9 @@ const BooksScreen = ({route, navigation}) => {
                     <BookCardFeed key={book.id}
                                   title={book.volumeInfo.title}
                                   author={book.volumeInfo?.authors?.[0]}
-                                  imgUrl={book.volumeInfo.imageLinks?.thumbnail}
-                                  category={book.volumeInfo?.categories?.[0]}
+                                  // imgUrl={book.volumeInfo.imageLinks?.thumbnail}
+                                  imgUrl={(book.volumeInfo.imageLinks?.thumbnail != null) ? book.volumeInfo.imageLinks?.thumbnail : "https://www.designwizard.com/wp-content/uploads/2019/07/74-The-Great-Gatsby-F.Scott-Fitzgerald-Book-Cover-Ideas.jpg"}
+                                  category={(book.volumeInfo?.categories?.[0] != null) ? book.volumeInfo?.categories?.[0] : "General"}
                                   description={book.volumeInfo?.description}
                                   navigation={navigation}
                     />

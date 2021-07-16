@@ -10,12 +10,11 @@ import {NavigationInjectedProps} from "react-navigation";
 import GoogleBookSearch from '../GoogleBooksLibrary/GoogleBookSearch'
 import WelcomeComponent from "../components/WelcomeComponent";
 
-const DashboardScreen = ({navigation, route}: NavigationInjectedProps & any) => {
-    // console.log(route)
-    const {name, photoUrl} = route.params.route.params.route.params; // TODO get rid of this joke
+const DashboardScreen = ({navigation}: NavigationInjectedProps) => {
+
     return (
         <Screen>
-            <WelcomeComponent name={name} profilePicUrl={photoUrl}/>
+            <WelcomeComponent/>
             <GoogleBookSearch
                 apikey={API_BOOKS_KEY}
                 onResultPress={
@@ -25,6 +24,7 @@ const DashboardScreen = ({navigation, route}: NavigationInjectedProps & any) => 
                 }
             />
             <FlatList
+                showsVerticalScrollIndicator={false}
                 ListHeaderComponent={
                     <View>
 

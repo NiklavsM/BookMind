@@ -12,7 +12,7 @@ const BookSummarySection = ({title, author, category, description}) => {
                 onPress={() => {
                     console.log("clicked")
                 }}>
-                <Text>{category}</Text>
+                <Text style={{margin: 20}}>{category}</Text>
             </TouchableOpacity>
             <Text>{description}</Text>
         </View>
@@ -21,18 +21,18 @@ const BookSummarySection = ({title, author, category, description}) => {
 
 const styles = StyleSheet.create({
     bookTitle: {
-        fontSize: 32,
+        fontSize: 23,
         fontWeight: 'bold'
     },
     category: {
         height: 35,
-        width: 100,
         borderRadius: 10,
         backgroundColor: "#dcdcdc",
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: '10%',
-        marginBottom: 12
+        marginBottom: 12,
+        alignSelf: 'flex-start'
     },
 })
 
