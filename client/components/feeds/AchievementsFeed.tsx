@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { FlatList, ScrollView, Text, View } from "react-native"
-import BookCard from '../cards/BookCard';
 import AchievementCard from '../cards/AchievementCard';
 
 const AchievementsFeed = () => {
