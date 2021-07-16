@@ -1,15 +1,13 @@
 import * as React from "react";
-import {StyleSheet} from "react-native"
 import AdventuresScreen from '../screens/AdventuresScreen';
 import StatsScreen from '../screens/StatsScreen';
-import {NavigationInjectedProps} from "react-navigation";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import DashboardStack from "./DashboardStack";
 
-const BottomNavigation = ({navigation}: NavigationInjectedProps) => {
+const BottomNavigation = () => {
     const Tab = createBottomTabNavigator();
 
     return (

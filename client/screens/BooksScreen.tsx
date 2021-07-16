@@ -1,17 +1,25 @@
 import * as React from "react";
-import {Text, View} from "react-native"
-import {NavigationInjectedProps} from "react-navigation";
+import {FlatList, View} from "react-native"
 import Screen from "../components/Screen";
 import {defaultStyles} from "../styles/styles";
+import BookCard from "../components/cards/BookCard";
 
 
-const BooksScreen = ({navigation}: NavigationInjectedProps) => {
-
+const BooksScreen = ({route}: any) => {
+    const books = route.params;
     return (
         <Screen>
-            <View style={defaultStyles.container}>
-                <Text>Hi</Text>
-            </View>
+            <FlatList
+                ListHeaderComponent={
+                    <View style={defaultStyles.container}>
+                        {books.map(book =>
+                            <BookCard name={book.volumeInfo.title}
+                                      description={book.volumeInfo.description}
+                                      imgUrl={book.volumeInfo.imageLinks?.thumbnail}
+                            />
+                        )}
+                    </View>
+                }/>
         </Screen>
     )
 }
