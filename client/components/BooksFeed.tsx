@@ -4,15 +4,21 @@ import {FlatList, StyleSheet, Text, View} from 'react-native';
 import {getAllEbooks} from '../api/BooksApi';
 import BookCard from '../components/BookCard';
 
-export default function BooksFeed() {
-
-    useEffect(() => {
-        loadBooks().then(r => {
-        });
-        // getBooks().then(r => setBooks(r));
-    })
+const BooksFeed = () => {
 
     const [books, setBooks] = useState<any[]>([]);
+    const [firstMount, setFirstMount] = useState(true);
+
+    useEffect(() => {
+        // loadBooks().then(r => {
+        // });
+        if (firstMount) {
+            getBooks().then(r => setBooks(r));
+        }
+        setFirstMount(false);
+
+    }, [firstMount])
+
 
     const loadBooks = async () => {
         let books: any = []
@@ -87,3 +93,5 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
+
+export default BooksFeed;
