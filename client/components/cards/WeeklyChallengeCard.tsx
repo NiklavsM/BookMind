@@ -22,7 +22,7 @@ const WeeklyChallengeCard = ({challengeName, description}: any) => {
 
 const styles = StyleSheet.create({
     card: {
-        backgroundColor: ColourPalette.offWhite,
+        // backgroundColor: ColourPalette.offWhite,
         overflow: 'hidden',
         width: "100%",
         height: 290,

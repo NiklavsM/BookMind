@@ -21,7 +21,7 @@ const TrendingBookCard = ({name}: any) => {
 
 const styles = StyleSheet.create({
     card: {
-        backgroundColor: ColourPalette.offWhite,
+        // backgroundColor: ColourPalette.offWhite,
         overflow: 'hidden',
         width: 150,
         height: 280,

@@ -22,7 +22,7 @@ const AchievementCard = ({description, date, uri}: any) => {
 const styles = StyleSheet.create({
     card: {
         borderRadius: 10,
-        backgroundColor: ColourPalette.offWhite,
+        // backgroundColor: ColourPalette.offWhite,
         overflow: 'hidden',
         width: 140,
         height: 230,
