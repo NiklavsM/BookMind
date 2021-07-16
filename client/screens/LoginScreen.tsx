@@ -1,17 +1,14 @@
 import * as React from "react";
-import {useContext} from "react";
 import {Button, Text, TextInput, View} from "react-native";
 
 import * as Google from 'expo-google-app-auth';
 
 import {NavigationInjectedProps} from "react-navigation";
-import Context from '../context/context';
 
 
 const LoginScreen = ({navigation}: NavigationInjectedProps) => {
 
     let value;
-    const context = useContext(Context);
 
     const handleGoogleLogin = () => {
         const config = {
@@ -19,16 +16,9 @@ const LoginScreen = ({navigation}: NavigationInjectedProps) => {
             scopes: ['profile', 'email']
         }
 
-        Google.logInAsync(config).then((result: any) => {
-
-            const {type, user} = result;
-            if (type === 'success') {
-                context.setName(user.name.split(" ")[0]);
-                context.setProfileUrl(user.photoUrl);
-                navigation.navigate('BottomNavigation')
-            } else {
-                console.log("Sing in was cancelled")
-            }
+        Google.logInAsync(config).then((result) => {
+            console.log(result)
+            navigation.navigate('BottomNavigation')
         }).catch(error => {
             console.log(error)
         })

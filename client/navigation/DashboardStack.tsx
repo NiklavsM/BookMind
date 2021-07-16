@@ -2,15 +2,37 @@ import * as React from 'react';
 import {createStackNavigator} from "@react-navigation/stack";
 import DashboardScreen from "../screens/DashboardScreen";
 import BooksScreen from "../screens/BooksScreen";
+import BookScreen from '../screens/BookScreen';
 
-const DashboardStack = ({route}) => {
+const DashboardStack = () => {
 
     const Stack = createStackNavigator();
 
     return (
         <Stack.Navigator initialRouteName="Dashboard" screenOptions={{headerShown: false}}>
-            <Stack.Screen name="Dashboard" component={DashboardScreen} initialParams={{route}} />
-            <Stack.Screen name="Books" component={BooksScreen} options={{headerShown: true}}/>
+            <Stack.Screen name="Dashboard" component={DashboardScreen} />
+            <Stack.Screen name="Books" component={BooksScreen} options={{
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: 'tomato',
+                    height: 65
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    // fontWeight: 'bold',
+                },
+            }}/>
+            <Stack.Screen name="Book" component={BookScreen} options={{
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: 'tomato',
+                    height: 65
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    // fontWeight: 'bold',
+                },
+            }}/>
         </Stack.Navigator>
     )
 }
