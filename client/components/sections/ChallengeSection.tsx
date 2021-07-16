@@ -1,19 +1,20 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from "react-native"
+import WeeklyChallengeCard from '../cards/WeeklyChallengeCard';
 import TrendingBooksFeed from '../feeds/TrendingBooksFeed';
 
-const TrendingBooksSection = () => {
+const ChallengeSection = () => {
 
     return (
         <View style={styles.container}>
             <View style={styles.upperSection}>
                 <View style={styles.upperTextSection}>
-                    <Text style={styles.bigBoldFont}>Trending</Text>
+                    <Text style={styles.bigBoldFont}>Weekly challenge</Text>
                     <Text style={styles.regularText}>See more</Text>
                 </View>
                 <Text style={styles.regularText}>Some text</Text>
             </View>
-            <TrendingBooksFeed/>
+            <WeeklyChallengeCard challengeName = "Title of the challenge" description = "Short Summary"/>
         </View>
     )
 }
@@ -40,4 +41,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default TrendingBooksSection;
+export default ChallengeSection;

@@ -5,6 +5,7 @@ import Screen from '../components/Screen';
 import AchievementsSection from '../components/sections/AchievementsSection';
 import TrendingBooksSection from '../components/sections/TrendingBooksSection';
 import { ScrollView } from 'react-native';
+import ChallengeSection from '../components/sections/ChallengeSection';
 
 const DashboardScreen = () => {
 
@@ -18,6 +19,7 @@ const DashboardScreen = () => {
                 />
                 <AchievementsSection/>
                 <TrendingBooksSection/>
+                <ChallengeSection/>
             </ScrollView>
         </Screen>
     )
