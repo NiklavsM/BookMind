@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SafeAreaView, Text, View } from "react-native"
+import { Text } from "react-native"
 import Screen from '../components/Screen';
 
 

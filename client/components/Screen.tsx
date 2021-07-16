@@ -3,11 +3,9 @@ import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 
 const Screen = ({children}) => {
     return (
-        <ScrollView style={styles.screen}>
-            <SafeAreaView >
+            <SafeAreaView style={styles.screen}>
                 {children}
             </SafeAreaView>
-        </ScrollView>
     );
 };
 
@@ -15,8 +13,8 @@ const styles = StyleSheet.create({
     screen: {
         height: '100%',
         flex: 1,
-        paddingVertical: '11%',
-        paddingHorizontal: '3%',
+        paddingTop: '11%',
+        paddingBottom: '2%',
     }
 });
 
