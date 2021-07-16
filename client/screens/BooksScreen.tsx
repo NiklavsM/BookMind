@@ -1,5 +1,5 @@
 import * as React from "react";
-import { FlatList, ScrollView, View } from "react-native"
+import {ScrollView, View} from "react-native"
 import Screen from "../components/Screen";
 import {defaultStyles} from "../styles/styles";
 import BookCard from "../components/cards/BookCard";
@@ -10,14 +10,15 @@ const BooksScreen = ({route}: any) => {
     return (
         <Screen>
             <ScrollView>
-            <View style={defaultStyles.container}>
-                {books.map(book =>
-                    <BookCard name={book.volumeInfo.title}
-                              description={book.volumeInfo.description}
-                              imgUrl={book.volumeInfo.imageLinks?.thumbnail}
-                    />
-                )}
-            </View>
+                <View style={defaultStyles.container}>
+                    {books.map(book =>
+                        <BookCard key={book.id}
+                                  name={book.volumeInfo.title}
+                                  description={book.volumeInfo.description}
+                                  imgUrl={book.volumeInfo.imageLinks?.thumbnail}
+                        />
+                    )}
+                </View>
             </ScrollView>
         </Screen>
     )

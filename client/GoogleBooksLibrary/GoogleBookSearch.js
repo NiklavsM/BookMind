@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import {Dimensions, FlatList, StyleSheet, Text, TextInput, TouchableHighlight, View} from 'react-native';
 import BookSearch from './BookSearch'
-import {Keyboard} from "react-native";
 
 const {height, width} = Dimensions.get('screen');
 
@@ -77,8 +76,8 @@ export default class GoogleBookSearch extends React.Component {
         return (
             <TouchableHighlight
                 keyboardShouldPersistTaps='handled'
-                onPress={() => {
-                    this.onResultPress(obj)}
+                onPress={
+                    () => this.onResultPress(obj)
                 }
                 underlayColor={'transparent'}
             >
@@ -133,6 +132,16 @@ export default class GoogleBookSearch extends React.Component {
             if (res.status
                 && res.data !== undefined) {
                 var booksArray = res.data;
+                let booksSet = new Set();
+                booksArray = booksArray.filter(book => {
+                    if (booksSet.has(book.volumeInfo.title)) {
+                        return false
+                    } else {
+                        booksSet.add(book.volumeInfo.title)
+                        return true
+                    }
+                })
+                console.log(booksArray)
                 if (self.props.limit !== -1) {
                     if (booksArray.length > self.props.limit) {
                         booksArray = booksArray.slice(0, self.props.limit);
