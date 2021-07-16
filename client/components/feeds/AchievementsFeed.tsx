@@ -7,13 +7,15 @@ import AchievementCard from '../cards/AchievementCard';
 const AchievementsFeed = () => {
 
     const [achievements, setAchievements] = useState<any[]>([]);
+    const [firstMount,setFirstMount] = useState(true);
 
     useEffect(() => {
-        let isMounted = true;
-        getAchievements().then(r => {
-                if(isMounted) setAchievements(r)
-        })
-        return () => { isMounted = false }
+        if (firstMount) {
+            getAchievements().then(r => {
+                setAchievements(r)
+            })
+        }
+        setFirstMount(false)
     })
 
     const getAchievements = async () => {

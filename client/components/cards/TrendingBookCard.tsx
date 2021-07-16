@@ -1,18 +1,18 @@
 import * as React from 'react';
-import { View, StyleSheet, SafeAreaView, TouchableWithoutFeedback, Image, Text } from "react-native"
+import { Image, StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native"
 import ColourPalette from '../../assets/ColourPalette';
 
-const AchievementCard = ({description, date, uri}: any) => {
+const TrendingBookCard = ({name}: any) => {
 
     return (
         <TouchableWithoutFeedback>
             <View style={styles.card}>
                 <View style={styles.upperPart}>
-                    <Image style={styles.image} source={{uri: 'https://sadanduseless.b-cdn.net/wp-content/uploads/2017/09/sticker1.png'}}/>
+                    <Image style={styles.image}
+                           source={{uri: 'https://s26162.pcdn.co/wp-content/uploads/2019/12/46301955-668x1024.jpg'}}/>
                 </View>
                 <View style={styles.lowerPart}>
-                    <Text>{description}</Text>
-                    <Text>{date}</Text>
+                    <Text style={styles.boldText}>{name}</Text>
                 </View>
             </View>
         </TouchableWithoutFeedback>
@@ -21,30 +21,27 @@ const AchievementCard = ({description, date, uri}: any) => {
 
 const styles = StyleSheet.create({
     card: {
-        borderRadius: 10,
         backgroundColor: ColourPalette.offWhite,
         overflow: 'hidden',
-        width: 140,
-        height: 230,
-        padding: "2.2%",
+        width: 150,
+        height: 280,
         marginRight: 20
 
     },
     upperPart: {
-        overflow: 'hidden',
-        height: "70%",
+        height: "80%",
     },
     lowerPart: {
-        overflow: 'hidden',
-        height: "30%",
+        height: "20%",
     },
     image: {
         width: '100%',
         height: '100%',
-        position: 'absolute',
     },
-
-
+    boldText: {
+        fontWeight: 'bold',
+        fontSize: 16
+    }
 })
 
-export default AchievementCard;
+export default TrendingBookCard;

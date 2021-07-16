@@ -1,14 +1,14 @@
 import * as React from "react";
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import ColourPalette from '../../assets/ColourPalette';
 
 export default function BookCard({name, description}: any) {
 
     return (
-            <View style={styles.container}>
-                <Text>{name}</Text>
-                <Text>{description}</Text>
-            </View>
+        <View style={styles.container}>
+            <Text>{name}</Text>
+            <Text>{description}</Text>
+        </View>
     )
 
 }

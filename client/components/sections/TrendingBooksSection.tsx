@@ -1,19 +1,19 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from "react-native"
-import AchievementsFeed from '../feeds/AchievementsFeed';
+import TrendingBooksFeed from '../feeds/TrendingBooksFeed';
 
-const AchievementsSection = () => {
+const TrendingBooksSection = () => {
 
     return (
         <View style={styles.container}>
             <View style={styles.upperSection}>
                 <View style={styles.upperTextSection}>
-                    <Text style={styles.bigBoldFont}>Achievements</Text>
+                    <Text style={styles.bigBoldFont}>Trending</Text>
                     <Text style={styles.regularText}>See more</Text>
                 </View>
                 <Text style={styles.regularText}>Some text</Text>
             </View>
-            <AchievementsFeed/>
+            <TrendingBooksFeed/>
         </View>
     )
 }
@@ -21,8 +21,7 @@ const AchievementsSection = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        width: '100%',
-        paddingBottom: "15%"
+        width: '100%'
     },
     upperSection: {
         paddingBottom: 10
@@ -40,4 +39,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default AchievementsSection;
+export default TrendingBooksSection;

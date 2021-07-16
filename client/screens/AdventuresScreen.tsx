@@ -1,14 +1,17 @@
 import * as React from 'react';
 import { Text } from "react-native"
 import Screen from '../components/Screen';
-import AchievementCard from '../components/cards/AchievementCard';
+import TrendingBookCard from '../components/cards/TrendingBookCard';
+import TrendingBooksFeed from '../components/feeds/TrendingBooksFeed';
+import TrendingBooksSection from '../components/sections/TrendingBooksSection';
 
 const AdventuresScreen = () => {
 
     return (
         <Screen>
             <Text>Adventures Screen</Text>
-            <AchievementCard description={"You are 5pt away from winning!"} date="13th July 2021"/>
+            <TrendingBookCard name={"Follow me to the ground"}/>
+            <TrendingBooksSection/>
         </Screen>
     )
 }
