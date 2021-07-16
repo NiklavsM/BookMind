@@ -9,6 +9,6 @@ export const getFreeEBooks = async () => {
 
 export const getAllEbooks = async (bookName: any) => {
     const endpoint =
-        ALL_EBOOKS_ENDPOINT + bookName + KEY_HEADER;
+        ALL_EBOOKS_ENDPOINT + bookName + "&maxResults=4" +KEY_HEADER;
     return await getData(GOOGLE_BOOKS_URL, endpoint);
 };
