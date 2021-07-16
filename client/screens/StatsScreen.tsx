@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { SafeAreaView, Text, View } from "react-native"
+import Screen from '../components/Screen';
 
 
 const StatsScreen = () => {
 
     return (
-        <SafeAreaView style={{backgroundColor: 'white'}}>
+        <Screen>
             <Text>Stats Screen</Text>
-        </SafeAreaView>
+        </Screen>
     )
 }
 
