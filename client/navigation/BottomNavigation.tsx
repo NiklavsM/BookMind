@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { View, StyleSheet, StatusBar, SafeAreaView } from "react-native"
+import * as React from "react";
+import {useState} from "react";
+import {SafeAreaView, StatusBar, StyleSheet, View} from "react-native"
 import DashboardScreen from '../screens/DashboardScreen';
 import AdventuresScreen from '../screens/AdventuresScreen';
 import StatsScreen from '../screens/StatsScreen';
 import BottomMenuButton from '../components/BottomMenuButton';
+
 
 const BottomNavigation = () => {
 
@@ -31,15 +33,17 @@ const BottomNavigation = () => {
             </View>
             <View style={styles.bottom}>
                 <View style={styles.row}>
-                    <BottomMenuButton font="Logo" name="menu" text="Dashboard" callback={() => changeChosen("DashboardScreen")}
+                    <BottomMenuButton font="Logo" name="menu" text="Dashboard"
+                                      callback={() => changeChosen("DashboardScreen")}
                                       color={chosen === "DashboardScreen" ? "#009e93" : "black"}
-                                      />
-                    <BottomMenuButton font="Logo" name="menu" text="Adventures" callback={() => changeChosen("AdventuresScreen")}
+                    />
+                    <BottomMenuButton font="Logo" name="menu" text="Adventures"
+                                      callback={() => changeChosen("AdventuresScreen")}
                                       color={chosen === "AdventuresScreen" ? "#009E93FF" : "black"}
-                                      />
+                    />
                     <BottomMenuButton font="Logo" name="menu" text="Stats" callback={() => changeChosen("StatsScreen")}
                                       color={chosen === "StatsScreen" ? "#009E93FF" : "black"}
-                                      />
+                    />
                 </View>
             </View>
         </SafeAreaView>

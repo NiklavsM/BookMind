@@ -1,12 +1,12 @@
 import * as React from 'react';
-
-import { GoogleBookSearch } from 'react-native-google-books'
 import Screen from '../components/Screen';
 import AchievementsSection from '../components/sections/AchievementsSection';
 import TrendingBooksSection from '../components/sections/TrendingBooksSection';
-import { ScrollView } from 'react-native';
+import {ScrollView} from 'react-native';
 import ChallengeSection from '../components/sections/ChallengeSection';
 import ActionSection from '../components/sections/ActionSection';
+import GoogleBookSearchCustomLocal from '../GoogleBooksLibrary/GoogleBookSearch'
+import {API_BOOKS_KEY} from "../api/APIConfig";
 
 const DashboardScreen = () => {
 
@@ -14,9 +14,9 @@ const DashboardScreen = () => {
         <Screen>
             <ScrollView>
                 {/*this component has top padding, that is why it's so high up*/}
-                <GoogleBookSearch
-                    apikey={"AIzaSyAnKM235UpJ-WUZshkcQWlobqf1C2TfEbA"}
-                    onResultPress={(book) => console.log(book)}
+                <GoogleBookSearchCustomLocal
+                    apikey={API_BOOKS_KEY}
+                    onResultPress={(book) => console.log("LOOOOL")}
                 />
                 <AchievementsSection/>
                 <TrendingBooksSection/>
