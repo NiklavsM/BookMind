@@ -11,10 +11,15 @@ async function run() {
     try {
         await client.connect();
         const database = client.db('bookApp');
-        const books = database.collection('questions');
-        const query = { name: 'Harry Potter' };
-        const book = await books.findOne(query);
-        console.log(book);
+        const questions = database.collection('users');
+        const query = { googleId: '1' };
+        //find document
+        // const book = await books.findOne(query);
+        // console.log(book);
+        //update document
+        // const book = await questions.updateOne(query, {$set: {field: "info"}})
+        //add to array
+        const book = await questions.updateOne(query, {$addToSet: {"stats.badges": "thisIsNew"}})
     } finally {
         await client.close();
     }
