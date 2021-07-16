@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, View, Text, Button, TouchableHighlight, TouchableOpacity } from "react-native"
-import BookWIthPointsCardFullBookScreen from '../../cards/BookWIthPointsCardFullBookScreen';
+import BookWIthPointsCardFullBookScreen from '../../cards/cardParts/BookWIthPointsCardFullBookScreen';
 
 const CoverButtonsSection = () => {
 

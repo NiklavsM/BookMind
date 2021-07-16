@@ -3,6 +3,7 @@ import {ScrollView, View} from "react-native"
 import Screen from "../components/Screen";
 import {defaultStyles} from "../styles/styles";
 import BookCard from "../components/cards/BookCard";
+import BookCardFeed from '../components/cards/BookCardFeed';
 
 
 const BooksScreen = ({route}: any) => {
@@ -12,9 +13,9 @@ const BooksScreen = ({route}: any) => {
             <ScrollView>
                 <View style={defaultStyles.container}>
                     {books.map(book =>
-                        <BookCard key={book.id}
-                                  name={book.volumeInfo.title}
-                                  description={book.volumeInfo.description}
+                        <BookCardFeed key={book.id}
+                                  title={book.volumeInfo.title}
+                                  author={book.volumeInfo.authors[0]}
                                   imgUrl={book.volumeInfo.imageLinks?.thumbnail}
                         />
                     )}
