@@ -1,35 +1,27 @@
 import * as React from "react";
-import { SafeAreaView, ScrollView, StyleSheet } from "react-native"
-import BookCardFeed from '../components/cards/BookCardFeed';
+import {ScrollView, View} from "react-native"
+import Screen from "../components/Screen";
+import {defaultStyles} from "../styles/styles";
+import BookCard from "../components/cards/BookCard";
 
 
-const BooksScreen = ({route}) => {
+const BooksScreen = ({route}: any) => {
     const books = route.params;
     return (
-        <SafeAreaView style={styles.screen}>
-            <ScrollView
-                showsVerticalScrollIndicator={false}>
+        <Screen>
+            <ScrollView>
+                <View style={defaultStyles.container}>
                     {books.map(book =>
-                        <BookCardFeed key={book.id}
-                                  title={book.volumeInfo.title}
-                                  author={book.volumeInfo?.authors[0]}
+                        <BookCard key={book.id}
+                                  name={book.volumeInfo.title}
+                                  description={book.volumeInfo.description}
                                   imgUrl={book.volumeInfo.imageLinks?.thumbnail}
                         />
                     )}
+                </View>
             </ScrollView>
-        </SafeAreaView>
+        </Screen>
     )
 }
-
-const styles = StyleSheet.create({
-    screen: {
-        flex: 1,
-        height: '100%',
-        paddingLeft: '8%',
-        paddingRight: '5%',
-
-    }
-});
-
 
 export default BooksScreen;
