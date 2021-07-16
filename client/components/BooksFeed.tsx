@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
-import { getAllEbooks } from '../api/BooksApi';
+import * as React from "react";
+import {useEffect, useState} from "react";
+import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {getAllEbooks} from '../api/BooksApi';
 import BookCard from '../components/BookCard';
 
 export default function BooksFeed() {
 
     useEffect(() => {
-        loadBooks().then(r => {});
+        loadBooks().then(r => {
+        });
         // getBooks().then(r => setBooks(r));
     })
 

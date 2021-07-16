@@ -1,7 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useEffect, useState } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
-import { getAllEbooks } from './api/BooksApi';
+import {StatusBar} from 'expo-status-bar';
+import * as React from "react";
+import {useEffect, useState} from 'react';
+import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {getAllEbooks} from './api/BooksApi';
 import BookCard from './components/BookCard';
 import BooksFeed from './components/BooksFeed';
 

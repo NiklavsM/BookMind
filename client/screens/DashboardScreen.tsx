@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import {GoogleBookSearch} from 'react-native-google-books'
 const DashboardScreen = () => {
 
