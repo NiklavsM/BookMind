@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
         height: '100%',
         flex: 1,
         paddingTop: '11%',
-        paddingBottom: '2%',
     }
 });
 

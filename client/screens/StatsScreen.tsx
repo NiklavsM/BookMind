@@ -1,13 +1,16 @@
 import * as React from 'react';
-import { Text } from "react-native"
+import {Text, View} from "react-native"
 import Screen from '../components/Screen';
+import {defaultStyles} from "../styles/styles";
 
 
 const StatsScreen = () => {
 
     return (
         <Screen>
-            <Text>Stats Screen</Text>
+            <View style={defaultStyles.container}>
+                <Text>Stats Screen</Text>
+            </View>
         </Screen>
     )
 }

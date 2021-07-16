@@ -1,28 +1,36 @@
-import * as React from 'react';
+import * as React from "react";
+import {FlatList, View} from "react-native"
+import Screen from "../components/Screen";
+import {defaultStyles} from "../styles/styles";
+import {API_BOOKS_KEY} from "../api/APIConfig";
+import AchievementsSection from "../components/sections/dashboardSections/AchievementsSection";
+import TrendingBooksSection from "../components/sections/dashboardSections/TrendingBooksSection";
+import ChallengeSection from "../components/sections/dashboardSections/ChallengeSection";
+import ActionSection from "../components/sections/dashboardSections/ActionSection";
+import {NavigationInjectedProps} from "react-navigation";
+import GoogleBookSearch from '../GoogleBooksLibrary/GoogleBookSearch'
 
-import { GoogleBookSearch } from 'react-native-google-books'
-import Screen from '../components/Screen';
-import AchievementsSection from '../components/sections/AchievementsSection';
-import TrendingBooksSection from '../components/sections/TrendingBooksSection';
-import { ScrollView } from 'react-native';
-import ChallengeSection from '../components/sections/ChallengeSection';
-import ActionSection from '../components/sections/ActionSection';
-
-const DashboardScreen = () => {
+const DashboardScreen = ({navigation}: NavigationInjectedProps) => {
 
     return (
         <Screen>
-            <ScrollView>
-                {/*this component has top padding, that is why it's so high up*/}
-                <GoogleBookSearch
-                    apikey={"AIzaSyAnKM235UpJ-WUZshkcQWlobqf1C2TfEbA"}
-                    onResultPress={(book) => console.log(book)}
-                />
-                <AchievementsSection/>
-                <TrendingBooksSection/>
-                <ChallengeSection/>
-                <ActionSection/>
-            </ScrollView>
+            <FlatList
+                ListHeaderComponent={
+                    <View style={defaultStyles.container}>
+                        <GoogleBookSearch
+                            apikey={API_BOOKS_KEY}
+                            onResultPress={(book) => {
+                                navigation.navigate('Books')
+                            }
+                            }
+                        />
+                        <AchievementsSection/>
+                        <TrendingBooksSection/>
+                        <ChallengeSection/>
+                        <ActionSection/>
+                    </View>
+                }
+            />
         </Screen>
     )
 }
