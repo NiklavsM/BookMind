@@ -30,13 +30,36 @@ MongoClient.connect(uri, {
             .catch(error => console.error(error))
     })
 
+
     app.post('/getBookQuestions', (req, res) => {
-        console.log("QUESTION REQUESTED")
-        console.log(req)
+        const database = client.db('bookApp');
+        const questions = database.collection('questions');
+        const query = { title: req.body.title };
+
+        // getBook(client, database, questions, query)
+            questions.findOne(query).then(book=>{
+                if(book != null) console.log(book.questions);
+            })
+
+        console.log("QUESTIONS REQUESTED")
+        console.log(req.body)
     })
 
-
 })
+
+
+async function getBook(client, database, collection, query) {
+    try {
+        await client.connect().then(client => {
+
+        });
+        const book = await collection.findOne(query);
+        console.log(book.questions);
+    } finally {
+        await client.close();
+    }
+}
+
 
 // async function run() {
 //     try {

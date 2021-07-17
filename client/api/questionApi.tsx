@@ -4,7 +4,7 @@ import {callApi} from "./apiUtils";
 
 
 export const getQuestions = (data) => {
-    return client.post("/getBookQuestions", data);
+    return callApi("getBookQuestions", data);
 };
 
 export const addQuestion = (question: QuestionI) => {
