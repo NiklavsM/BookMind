@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types'
 import {Dimensions, FlatList, StyleSheet, Text, TextInput, TouchableHighlight, View} from 'react-native';
 import BookSearch from './BookSearch'

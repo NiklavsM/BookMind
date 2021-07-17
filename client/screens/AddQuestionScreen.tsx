@@ -3,13 +3,30 @@ import {useState} from "react";
 import {StyleSheet, Text, TextInput, TouchableOpacity} from "react-native"
 import Screen from "../components/Screen";
 import {addQuestion} from "../api/questionApi";
+import Toast from "react-native-toast-message";
+import {NavigationInjectedProps} from "react-navigation";
 
-const AddQuestionScreen = ({route}) => {
+const AddQuestionScreen = ({route, navigation} : NavigationInjectedProps & any) => {
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState("");
     const [optionTwo, setOptionTwo] = useState("");
     const [optionThree, setOptionThree] = useState("");
     const [optionFour, setOptionFour] = useState("");
+
+    const onSave = () => {
+        addQuestion({
+            title: route.params.title,
+            correct_option: answer,
+            options: [answer, optionTwo, optionThree, optionFour],
+            question,
+        })
+        Toast.show({
+            type:'success',
+            position:'bottom',
+            text1: 'Question Added',
+        });
+        navigation.goBack();
+    }
 
     return (
         <Screen>
@@ -51,14 +68,7 @@ const AddQuestionScreen = ({route}) => {
             />
             <TouchableOpacity
                 style={styles.saveButton}
-                onPress={() => {
-                    addQuestion({
-                        title: route.params.title,
-                        correct_option: answer,
-                        options: [answer, optionTwo, optionThree, optionFour],
-                        question,
-                    })
-                }}
+                onPress={onSave}
             >
                 <Text>Save</Text>
             </TouchableOpacity>
