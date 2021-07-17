@@ -40,7 +40,10 @@ MongoClient.connect(uri, {
 
         // getBook(client, database, questions, query)
             questions.findOne(query).then(book=>{
-                if(book != null) console.log(book.questions);
+                if(book != null && book.questions != null) {
+                    console.log(book.questions);
+                    res.send("string")
+                }
             })
 
         console.log("QUESTIONS REQUESTED")
@@ -48,19 +51,6 @@ MongoClient.connect(uri, {
     })
 
 })
-
-
-async function getBook(client, database, collection, query) {
-    try {
-        await client.connect().then(client => {
-
-        });
-        const book = await collection.findOne(query);
-        console.log(book.questions);
-    } finally {
-        await client.close();
-    }
-}
 
 
 // async function run() {
