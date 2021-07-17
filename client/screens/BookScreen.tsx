@@ -18,7 +18,7 @@ const BookScreen = ({route, navigation}: BookScreen & NavigationInjectedProps) =
     return (
         <View style={styles.screen}>
             <ScrollView showsVerticalScrollIndicator={false}>
-                <CoverButtonsSection imgUrl={imgUrl} navigation={navigation}/>
+                <CoverButtonsSection title={title} imgUrl={imgUrl} navigation={navigation}/>
                 <BookSummarySection title={title} author={author} category={category} description={description}/>
             </ScrollView>
         </View>

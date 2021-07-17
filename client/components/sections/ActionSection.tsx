@@ -1,12 +1,11 @@
 import * as React from 'react';
 import {StyleSheet, Text, View} from "react-native"
 import ActionCard from '../cards/ActionCard';
-import {defaultStyles} from "../../styles/styles";
 
 const ActionSection = () => {
 
     return (
-        <View style={defaultStyles.container}>
+        <View style={styles.container}>
             <View style={styles.upperSection}>
                 <View style={styles.upperTextSection}>
                     <Text style={styles.bigBoldFont}>Actions/Updates</Text>
@@ -22,6 +21,11 @@ const ActionSection = () => {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        height: '100%',
+        flex: 1,
+        padding: '5%',
+    },
     upperSection: {
         paddingBottom: 10
     },
