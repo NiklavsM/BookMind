@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         width: '100%',
-        paddingBottom: "15%"
+        paddingTop: "11%"
     },
     upperSection: {
         paddingBottom: 10

@@ -22,7 +22,7 @@ const ActionSection = () => {
 
 const styles = StyleSheet.create({
     upperSection: {
-        paddingBottom: 10
+        paddingTop: "11%"
     },
     upperTextSection: {
         flexDirection: "row",

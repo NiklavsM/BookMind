@@ -8,7 +8,7 @@ const AchievementsSection = () => {
         <View style={styles.container}>
             <View style={styles.upperSection}>
                 <View style={styles.upperTextSection}>
-                    <Text style={styles.bigBoldFont}>Achievements</Text>
+                    <Text style={styles.bigBoldFont}>Achievementss</Text>
                     <Text style={styles.regularText}>See more</Text>
                 </View>
                 <Text style={styles.regularText}>Some text</Text>
@@ -22,10 +22,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         width: '100%',
-        paddingBottom: "15%"
+        paddingTop: "10%"
     },
     upperSection: {
-        paddingBottom: 10
+        paddingBottom: 10,
     },
     upperTextSection: {
         flexDirection: "row",

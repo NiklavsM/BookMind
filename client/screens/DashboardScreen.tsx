@@ -28,8 +28,8 @@ const DashboardScreen = ({navigation}: NavigationInjectedProps) => {
                 ListHeaderComponent={
                     <View>
 
-                        <AchievementsSection/>
                         <TrendingBooksSection/>
+                        <AchievementsSection/>
                         <ChallengeSection/>
                         <ActionSection/>
                     </View>
