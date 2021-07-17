@@ -63,7 +63,7 @@ const Quiz = ({allQuestions, navigation}) => {
                 }}>
                     <Text style={{
                         color: COLORS.black,
-                        fontSize: 20,
+                        fontSize: 19,
                         opacity: 0.6,
                         marginRight: 2,
                         fontWeight: 'bold'
@@ -79,7 +79,7 @@ const Quiz = ({allQuestions, navigation}) => {
                 {/* Question */}
                 <Text style={{
                     color: COLORS.black,
-                    fontSize: 30,
+                    fontSize: 25,
                     fontWeight: 'bold'
                 }}>{allQuestions[currentQuestionIndex]?.question}</Text>
             </View>
@@ -98,8 +98,8 @@ const Quiz = ({allQuestions, navigation}) => {
                                 borderColor: option == currentOptionSelected
                                     ? COLORS.success
                                     : COLORS.black,
-                                backgroundColor: COLORS.white,
-                                height: 60, borderRadius: 15,
+                                backgroundColor: option == currentOptionSelected ? COLORS.fillIn : COLORS.white,
+                                height: 54, borderRadius: 13,
                                 flexDirection: 'row',
                                 alignItems: 'center', justifyContent: 'space-between',
                                 paddingHorizontal: 20,
@@ -176,12 +176,13 @@ const Quiz = ({allQuestions, navigation}) => {
     return (
         <SafeAreaView style={{
             flex: 1,
+            // padding: 20
         }}>
             <StatusBar barStyle="light-content" backgroundColor={COLORS.primary}/>
             <View style={{
                 flex: 1,
-                paddingVertical: 40,
-                paddingHorizontal: 16,
+                paddingVertical: 20,
+                paddingHorizontal: 24,
                 backgroundColor: COLORS.white,
                 position: 'relative'
             }}>
@@ -200,16 +201,18 @@ const Quiz = ({allQuestions, navigation}) => {
 
                 {/* Background Image */}
                 <Image
-                    source={require('../assets/images/DottedBG.png')}
+                    source={{
+                        uri: "https://media.giphy.com/media/69hWUKqJT4OA3jvupu/giphy.gif"
+                    }}
                     style={{
-                        width: SIZES.width,
-                        height: 130,
-                        zIndex: -1,
+                        width: 120,
+                        height: 120,
+                        zIndex: -2,
                         position: 'absolute',
-                        bottom: 0,
-                        left: 0,
+                        bottom: 50,
+                        left: 35,
                         right: 0,
-                        opacity: 0.5
+                        opacity: 0.9
                     }}
                     resizeMode={'contain'}
                 />

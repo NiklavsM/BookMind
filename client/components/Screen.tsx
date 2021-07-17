@@ -13,7 +13,8 @@ const styles = StyleSheet.create({
     screen: {
         flex: 1,
         height: '100%',
-        padding: '5%',
+        paddingLeft: '5%',
+        paddingRight: '5%',
         paddingTop: '11%',
     }
 });

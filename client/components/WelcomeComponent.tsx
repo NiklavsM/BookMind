@@ -11,7 +11,10 @@ const WelcomeComponent = () => {
     return (
         <View style={styles.container}>
             <Text style={styles.welcomeText}>Hi {context.name}!</Text>
-            <Image style={{height: 36, width: 36, borderRadius:18, borderWidth:1, borderColor:"black"}} source={{uri: context.profileUrl}}/>
+            <View style={{flexDirection: 'row'}}>
+                <Image style={{height: 36, width: 70, borderRadius:12, borderWidth:1, borderColor:"lightgrey", marginRight: 14}} source={require("../assets/points.png")}/>
+                <Image style={{height: 37, width: 37, borderRadius:18, borderWidth:1, borderColor:"lightgrey"}} source={{uri: context.profileUrl}}/>
+            </View>
         </View>
     )
 }
@@ -24,7 +27,7 @@ const styles = StyleSheet.create({
     },
     welcomeText: {
         fontWeight: "bold",
-        fontSize: 20,
+        fontSize: 25,
     }
 })
 

@@ -17,19 +17,20 @@ const BottomNavigation = () => {
                                let iconName;
 
                                if (route.name === 'Dashboard') {
-                                   return <MaterialIcons name='house' size={size} color={color}/>;
+                                   return <Feather name='home' size={size} color={color}/>;
                                } else if (route.name === 'Your Adventures') {
                                    iconName = focused ? 'book-open' : 'book';
                                    return <Feather name={iconName} size={size} color={color}/>;
                                } else if (route.name === 'Achievements') {
                                    iconName = focused ? 'star' : 'star';
-                                   return <Fontisto name={iconName} size={size} color={color}/>;
+                                   return <Feather name={iconName} size={size} color={color}/>;
                                }
                            },
                        })}
                        tabBarOptions={{
-                           activeTintColor: 'tomato',
-                           inactiveTintColor: 'gray',
+                           tabStyle: {backgroundColor: "#F5F9FF"},
+                           activeTintColor: '#2C80FD',
+                           inactiveTintColor: '#7A879A',
                        }}
         >
             <Tab.Screen name="Dashboard" component={DashboardStack}/>

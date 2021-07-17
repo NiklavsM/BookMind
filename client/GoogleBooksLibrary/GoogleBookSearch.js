@@ -27,7 +27,7 @@ export default class GoogleBookSearch extends React.Component {
     static defaultProps = {
         apikey: "",
         theme: 'light',
-        placeholder: "Search",
+        placeholder: "🔍 search",
         keyboardType: 'default',
         returnKeyType: 'done',
         value: "",
@@ -194,9 +194,10 @@ const styles = StyleSheet.create({
         overflow: 'visible',
         borderTopWidth: 0,
         borderBottomWidth: 0,
-        height: 30,
+        height: 40,
         width: width - 35,
         alignSelf: 'center',
+        marginTop:20,
         // backgroundColor: "#fff",
         // borderColor:"#f6f6f6",
         // borderWidth:0.7,
@@ -206,17 +207,17 @@ const styles = StyleSheet.create({
         // shadowOffset: {
         //     height: 0.6 * 5,
         // },
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     input: {
-        backgroundColor: '#ffebeb',
+        backgroundColor: '#d4daff',
         fontSize: 15,
         lineHeight: 22.5,
         paddingBottom: 0,
         paddingHorizontal: 10,
         flex: 1,
-        borderWidth:1,
-        borderRadius: 10,
+        // borderWidth:1,
+        borderRadius: 5,
     },
     resultContainer: {
         position: 'absolute',
