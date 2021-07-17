@@ -72,17 +72,17 @@ const Quiz = ({allQuestions}) => {
                     alignItems: 'flex-end'
                 }}>
                     <Text style={{
-                        color: COLORS.white,
+                        color: COLORS.black,
                         fontSize: 20,
                         opacity: 0.6,
                         marginRight: 2
                     }}>{currentQuestionIndex + 1}</Text>
-                    <Text style={{color: COLORS.white, fontSize: 18, opacity: 0.6}}>/ {allQuestions.length}</Text>
+                    <Text style={{color: COLORS.black, fontSize: 18, opacity: 0.6}}>/ {allQuestions.length}</Text>
                 </View>
 
                 {/* Question */}
                 <Text style={{
-                    color: COLORS.white,
+                    color: COLORS.black,
                     fontSize: 30
                 }}>{allQuestions[currentQuestionIndex]?.question}</Text>
             </View>
@@ -101,16 +101,16 @@ const Quiz = ({allQuestions}) => {
                                 borderWidth: 3,
                                 borderColor: option == currentOptionSelected
                                     ? COLORS.success
-                                    : COLORS.secondary + '40',
-                                backgroundColor: COLORS.secondary + '20',
-                                height: 60, borderRadius: 20,
+                                    : COLORS.black,
+                                backgroundColor: COLORS.white,
+                                height: 60, borderRadius: 15,
                                 flexDirection: 'row',
                                 alignItems: 'center', justifyContent: 'space-between',
                                 paddingHorizontal: 20,
                                 marginVertical: 10
                             }}
                         >
-                            <Text style={{fontSize: 20, color: COLORS.white}}>{option}</Text>
+                            <Text style={{fontSize: 20, color: COLORS.black}}>{option}</Text>
 
                         </TouchableOpacity>
                     ))
@@ -124,9 +124,16 @@ const Quiz = ({allQuestions}) => {
                 <TouchableOpacity
                     onPress={handleNext}
                     style={{
-                        marginTop: 20, width: '100%', backgroundColor: COLORS.accent, padding: 20, borderRadius: 5
+                        marginTop: 20,
+                        width: '40%',
+                        height: 30,
+                        backgroundColor: COLORS.white,
+                        padding: 20,
+                        borderRadius: 20,
+                        borderColor: COLORS.black,
+                        borderWidth: 3
                     }}>
-                    <Text style={{fontSize: 20, color: COLORS.white, textAlign: 'center'}}>Next</Text>
+                    <Text style={{fontSize: 20, color: COLORS.black, textAlign: 'center'}}>Next</Text>
                 </TouchableOpacity>
             )
         } else {
@@ -146,13 +153,15 @@ const Quiz = ({allQuestions}) => {
                 width: '100%',
                 height: 20,
                 borderRadius: 20,
-                backgroundColor: '#00000020',
+                backgroundColor: 'rgb(255,255,255)',
+                borderColor: COLORS.black,
+                borderWidth: 0.5
 
             }}>
                 <Animated.View style={[{
                     height: 20,
                     borderRadius: 20,
-                    backgroundColor: COLORS.accent
+                    backgroundColor: COLORS.black
                 }, {
                     width: progressAnim
                 }]}>
@@ -173,7 +182,7 @@ const Quiz = ({allQuestions}) => {
                 flex: 1,
                 paddingVertical: 40,
                 paddingHorizontal: 16,
-                backgroundColor: COLORS.background,
+                backgroundColor: COLORS.white,
                 position: 'relative'
             }}>
 
