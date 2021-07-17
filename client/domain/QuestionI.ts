@@ -1,7 +1,6 @@
 export interface QuestionI{
-    book: string,
+    title: string,
     question: string,
     options: string[],
-    answer: string,
-    questionAuthor: string,
+    correct_option: string,
 }

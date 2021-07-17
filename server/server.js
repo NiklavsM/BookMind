@@ -24,10 +24,9 @@ MongoClient.connect(uri, {
 
     app.post('/addBookQuestion', (req, res) => {
         console.log(req.body)
-        const query = {title: req.body.title};
-        booksCollection.insertOne(req.body)
+        const {title, question, options, correct_option} = req.body;
+        booksCollection.updateOne({title}, {$push: {questions: {question,options, correct_option}}}, {upsert: true})
             .then(result => {
-                // console.log(result)
                 res.json("Question added")
             })
             .catch(error => console.error(error))
@@ -37,7 +36,6 @@ MongoClient.connect(uri, {
     app.post('/getBookQuestions', (req, res) => {
         const query = {title: req.body.title};
 
-        // getBook(client, database, questions, query)
         booksCollection.findOne(query).then(book => {
             if (book != null && book.questions != null) {
                 console.log(book.questions);

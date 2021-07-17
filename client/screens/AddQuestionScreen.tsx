@@ -1,14 +1,10 @@
 import * as React from "react";
-import {useContext, useState} from "react";
+import {useState} from "react";
 import {StyleSheet, Text, TextInput, TouchableOpacity} from "react-native"
 import Screen from "../components/Screen";
 import {addQuestion} from "../api/questionApi";
-import Context from "../context/context";
 
 const AddQuestionScreen = ({route}) => {
-
-    const context = useContext(Context)
-
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState("");
     const [optionTwo, setOptionTwo] = useState("");
@@ -57,11 +53,10 @@ const AddQuestionScreen = ({route}) => {
                 style={styles.saveButton}
                 onPress={() => {
                     addQuestion({
-                        book: route.params.title,
-                        answer: answer,
+                        title: route.params.title,
+                        correct_option: answer,
                         options: [answer, optionTwo, optionThree, optionFour],
-                        question: question,
-                        questionAuthor: context.email,
+                        question,
                     })
                 }}
             >
@@ -81,6 +76,7 @@ const styles = StyleSheet.create({
         padding: 8,
         borderWidth: 1,
         borderRadius: 10,
+        textAlignVertical: "top",
     },
     singleLineInput: {
         height: 40,
