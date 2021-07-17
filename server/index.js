@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 
 app.listen(3000, () => {
     console.log("Listening")
@@ -21,10 +21,11 @@ MongoClient.connect(uri, {
     const questionsCollection = db.collection('users');
 
     app.post('/question', (req, res) => {
-        console.log("HERE")
+        console.log("HERE " + req.body)
         questionsCollection.insertOne(req.body)
             .then(result => {
-                console.log(result)
+                // console.log(result)
+                res.json("Question added")
             })
             .catch(error => console.error(error))
     })

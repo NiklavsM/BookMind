@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { ScrollView, StyleSheet, View } from "react-native"
+import {ScrollView, StyleSheet, View} from "react-native"
 import CoverButtonsSection from '../components/sections/bookPageSections/CoverButtonsSection';
 import BookSummarySection from '../components/sections/bookPageSections/BookSummarySection';
-import { NavigationInjectedProps } from 'react-navigation';
+import {NavigationInjectedProps} from 'react-navigation';
 
 interface BookScreen {
     route: any,
@@ -18,7 +18,7 @@ const BookScreen = ({route, navigation}: BookScreen & NavigationInjectedProps) =
     return (
         <View style={styles.screen}>
             <ScrollView showsVerticalScrollIndicator={false}>
-                <CoverButtonsSection imgUrl={imgUrl} navigation={navigation}/>
+                <CoverButtonsSection title={title} imgUrl={imgUrl} navigation={navigation}/>
                 <BookSummarySection title={title} author={author} category={category} description={description}/>
             </ScrollView>
         </View>

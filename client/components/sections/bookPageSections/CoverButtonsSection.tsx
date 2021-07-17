@@ -1,39 +1,40 @@
 import * as React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import {StyleSheet, Text, TouchableOpacity, View} from "react-native"
 import BookWIthPointsCardFullBookScreen from '../../cards/cardParts/BookWIthPointsCardFullBookScreen';
-import { NavigationInjectedProps } from 'react-navigation';
+import {NavigationInjectedProps} from 'react-navigation';
 
 interface CoverButtonsSection {
+    title: string,
     imgUrl: string,
     navigation?: any,
 }
 
-const CoverButtonsSection = ({imgUrl, navigation}: CoverButtonsSection & NavigationInjectedProps) => {
+const CoverButtonsSection = ({title, imgUrl, navigation}: CoverButtonsSection & NavigationInjectedProps) => {
 
     const allQuestions = [
         {
             question: "What’s the biggest planet in our solar system?",
-            options: ["Jupiter","Saturn","Neptune","Mercury"],
+            options: ["Jupiter", "Saturn", "Neptune", "Mercury"],
             correct_option: "Jupiter"
         },
         {
             question: "What attraction in India is one of the famus in the world?",
-            options: ["Chand Minar","Taj Mahal","Stadium"],
+            options: ["Chand Minar", "Taj Mahal", "Stadium"],
             correct_option: "Taj Mahal"
         },
         {
             question: "What land animal can open its mouth the widest?",
-            options: ["Alligator","Crocodile","Baboon","Hippo"],
+            options: ["Alligator", "Crocodile", "Baboon", "Hippo"],
             correct_option: "Hippo"
         },
         {
             question: "What is the largest animal on Earth?",
-            options: ["The African elephant","The blue whale","The sperm whale","The giant squid"],
+            options: ["The African elephant", "The blue whale", "The sperm whale", "The giant squid"],
             correct_option: "The blue whale"
         },
         {
             question: "What is the only flying mammal?",
-            options: ["The bat","The flying squirrel","The bald eagle","The colugo"],
+            options: ["The bat", "The flying squirrel", "The bald eagle", "The colugo"],
             correct_option: "The bat"
         }
     ]
@@ -54,7 +55,7 @@ const CoverButtonsSection = ({imgUrl, navigation}: CoverButtonsSection & Navigat
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => {
-                            console.log("clicked")
+                            navigation.navigate("Add Question", {bookName: title})
                         }}>
                         <Text>Add a question</Text>
                     </TouchableOpacity>
