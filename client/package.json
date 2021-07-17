@@ -24,7 +24,9 @@
     "react-native-google-books": "^1.0.4",
     "react-native-react-native-quiz-single-choice": "^1.0.1",
     "react-native-screens": "^3.4.0",
+    "react-native-share": "^6.3.0",
     "react-native-single-choice": "^0.1.1",
+    "react-native-toast-message": "^1.4.9",
     "react-native-web": "~0.13.12",
     "react-navigation": "^4.4.4"
   },
