@@ -91,7 +91,7 @@ export default class GoogleBookSearch extends React.Component {
 
     onResultPress(book) {
         if (this.props.onResultPress !== undefined) {
-            this.setState({showcontainer: false, searchval: book.title})
+            this.setState({showcontainer: false, searchval: ""})
             this.props.onResultPress(book, this.state.gbooks)
         }
     }
@@ -136,7 +136,7 @@ export default class GoogleBookSearch extends React.Component {
                 booksArray = booksArray.filter(book => {
                     if (booksSet.has(book.volumeInfo.title)) {
                         return false
-                    } if(book.volumeInfo.title.length > 100) {
+                    } if(book.volumeInfo.title.length > 80) {
                         return false
                     } else {
                         booksSet.add(book.volumeInfo.title)
@@ -194,8 +194,8 @@ const styles = StyleSheet.create({
         overflow: 'visible',
         borderTopWidth: 0,
         borderBottomWidth: 0,
-        height: 50,
-        width: width - 16,
+        height: 30,
+        width: width - 35,
         alignSelf: 'center',
         // backgroundColor: "#fff",
         // borderColor:"#f6f6f6",
@@ -209,18 +209,20 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     input: {
-        backgroundColor: 'transparent',
+        backgroundColor: '#ffebeb',
         fontSize: 15,
         lineHeight: 22.5,
         paddingBottom: 0,
-        paddingHorizontal: 15,
-        flex: 1
+        paddingHorizontal: 10,
+        flex: 1,
+        borderWidth:1,
+        borderRadius: 10,
     },
     resultContainer: {
         position: 'absolute',
-        top: 60,
-        left: 8,
-        right: 8,
+        top: 30,
+        // left: 8,
+        // right: 8,
         backgroundColor: '#FFF',
         borderRadius: 5,
         flex: 1,
@@ -233,7 +235,7 @@ const styles = StyleSheet.create({
         },
     },
     resultItem: {
-        height: 50,
+        height: 40,
         paddingHorizontal: 8,
         paddingVertical: 4,
         justifyContent: 'center',

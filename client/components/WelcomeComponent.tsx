@@ -11,7 +11,7 @@ const WelcomeComponent = () => {
     return (
         <View style={styles.container}>
             <Text style={styles.welcomeText}>Hi {context.name}!</Text>
-            <Image style={{height: 50, width: 50}} source={{uri: context.profileUrl}}/>
+            <Image style={{height: 36, width: 36, borderRadius:18, borderWidth:1, borderColor:"black"}} source={{uri: context.profileUrl}}/>
         </View>
     )
 }
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
         justifyContent: "space-between",
-        height: 30
+        height: 40,
     },
     welcomeText: {
         fontWeight: "bold",

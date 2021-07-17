@@ -34,7 +34,7 @@ const AddQuestionScreen = ({route}) => {
                 onChangeText={setAnswer}
             />
 
-            <Text style={styles.text}>Other answers</Text>
+            <Text style={styles.text}>Other options</Text>
             <TextInput
                 maxLength={40}
                 style={styles.singleLineInput}
@@ -56,7 +56,6 @@ const AddQuestionScreen = ({route}) => {
             <TouchableOpacity
                 style={styles.saveButton}
                 onPress={() => {
-                    console.log("LOL")
                     addQuestion({
                         book: route.params.title,
                         answer: answer,
