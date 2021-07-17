@@ -18,13 +18,14 @@ MongoClient.connect(uri, {
     useUnifiedTopology: true,
 }).then(client => {
     const db = client.db('bookApp')
-    const questionsCollection = db.collection('questions');
+    // const questionsCollection = db.collection('questions');
     const booksCollection = db.collection('books');
     const usersCollection = db.collection('users');
 
     app.post('/addBookQuestion', (req, res) => {
         console.log(req.body)
-        questionsCollection.insertOne(req.body)
+        const query = {title: req.body.title};
+        booksCollection.insertOne(req.body)
             .then(result => {
                 // console.log(result)
                 res.json("Question added")
@@ -34,12 +35,10 @@ MongoClient.connect(uri, {
 
 
     app.post('/getBookQuestions', (req, res) => {
-        const database = client.db('bookApp');
-        const questions = database.collection('questions');
         const query = {title: req.body.title};
 
         // getBook(client, database, questions, query)
-        questions.findOne(query).then(book => {
+        booksCollection.findOne(query).then(book => {
             if (book != null && book.questions != null) {
                 console.log(book.questions);
                 res.send(book.questions)
