@@ -1,11 +1,10 @@
 import * as React from 'react';
-import {View} from "react-native"
 import Quiz from '../quiz/screens/Quiz'
 
-const QuizScreen = ({route}) => {
+const QuizScreen = ({route, navigation}) => {
 
     return (
-            <Quiz allQuestions={route.params.allQuestions}/>
+        <Quiz allQuestions={route.params.allQuestions} navigation={navigation}/>
     )
 }
 

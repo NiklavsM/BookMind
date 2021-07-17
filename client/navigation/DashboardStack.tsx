@@ -5,6 +5,7 @@ import BooksScreen from "../screens/BooksScreen";
 import BookScreen from '../screens/BookScreen';
 import QuizScreen from '../screens/QuizScreen';
 import AddQuestionScreen from "../screens/AddQuestionScreen";
+import QuizCompleteScreen from "../quiz/screens/QuizCompleteScreen";
 
 const StackScreenOptions = {
     headerShown: true,
@@ -26,6 +27,7 @@ const DashboardStack = () => {
         <Stack.Navigator initialRouteName="Dashboard" screenOptions={{headerShown: false}}>
             <Stack.Screen name="Dashboard" component={DashboardScreen}/>
             <Stack.Screen name="BookQuiz" component={QuizScreen}/>
+            <Stack.Screen name="QuizComplete" component={QuizCompleteScreen}/>
             <Stack.Screen name="Books" component={BooksScreen} options={StackScreenOptions}/>
             <Stack.Screen name="Book" component={BookScreen} options={StackScreenOptions}/>
             <Stack.Screen name="Add Question" component={AddQuestionScreen} options={StackScreenOptions}/>

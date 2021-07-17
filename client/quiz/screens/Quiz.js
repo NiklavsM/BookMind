@@ -1,60 +1,50 @@
 import React, {useState} from 'react'
-import {Animated, Image, Modal, SafeAreaView, StatusBar, Text, TouchableOpacity, View} from 'react-native'
+import {Animated, Image, SafeAreaView, StatusBar, Text, TouchableOpacity, View} from 'react-native'
 import {COLORS, SIZES} from '../constants';
 
-const Quiz = ({allQuestions}) => {
+const Quiz = ({allQuestions, navigation}) => {
 
     // const allQuestions = data;
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
     const [currentOptionSelected, setCurrentOptionSelected] = useState(null);
     const [correctOption, setCorrectOption] = useState(null);
-    const [isOptionsDisabled, setIsOptionsDisabled] = useState(false);
     const [score, setScore] = useState(0)
-    const [showNextButton, setShowNextButton] = useState(false)
-    const [showScoreModal, setShowScoreModal] = useState(false)
+    const [questions, setQuestions] = useState([]);
 
-    const validateAnswer = (selectedOption) => {
+    const validateAnswer = (question, selectedOption) => {
         let correct_option = allQuestions[currentQuestionIndex]['correct_option'];
         setCurrentOptionSelected(selectedOption);
         setCorrectOption(correct_option);
-        setIsOptionsDisabled(true);
         if (selectedOption == correct_option) {
             // Set Score
             setScore(score + 1)
         }
-        // Show Next Button
-        setShowNextButton(true)
+        setQuestions([...questions, {question, correctOption: correct_option, selectedOption}])
     }
     const handleNext = () => {
+        validateAnswer(allQuestions[currentQuestionIndex].question, currentOptionSelected)
         if (currentQuestionIndex == allQuestions.length - 1) {
+            let finalScore = score;
+            if (currentOptionSelected == allQuestions[currentQuestionIndex]['correct_option']) {
+                finalScore++;
+            }
             // Last Question
-            // Show Score Modal
-            setShowScoreModal(true)
+            navigation.navigate("QuizComplete", {
+                    questions: [...questions, {
+                        question: allQuestions[currentQuestionIndex].question,
+                        correctOption: allQuestions[currentQuestionIndex]['correct_option'],
+                        selectedOption: currentOptionSelected,
+                    }],
+                    score: finalScore
+                }
+            );
         } else {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
             setCurrentOptionSelected(null);
             setCorrectOption(null);
-            setIsOptionsDisabled(false);
-            setShowNextButton(false);
         }
         Animated.timing(progress, {
             toValue: currentQuestionIndex + 1,
-            duration: 1000,
-            useNativeDriver: false
-        }).start();
-    }
-    const restartQuiz = () => {
-        setShowScoreModal(false);
-
-        setCurrentQuestionIndex(0);
-        setScore(0);
-
-        setCurrentOptionSelected(null);
-        setCorrectOption(null);
-        setIsOptionsDisabled(false);
-        setShowNextButton(false);
-        Animated.timing(progress, {
-            toValue: 0,
             duration: 1000,
             useNativeDriver: false
         }).start();
@@ -78,7 +68,12 @@ const Quiz = ({allQuestions}) => {
                         marginRight: 2,
                         fontWeight: 'bold'
                     }}>{currentQuestionIndex + 1}</Text>
-                    <Text style={{color: COLORS.black, fontSize: 18, opacity: 0.6, fontWeight: 'bold'}}>/ {allQuestions.length}</Text>
+                    <Text style={{
+                        color: COLORS.black,
+                        fontSize: 18,
+                        opacity: 0.6,
+                        fontWeight: 'bold'
+                    }}>/ {allQuestions.length}</Text>
                 </View>
 
                 {/* Question */}
@@ -96,8 +91,7 @@ const Quiz = ({allQuestions}) => {
                 {
                     allQuestions[currentQuestionIndex]?.options.map(option => (
                         <TouchableOpacity
-                            onPress={() => validateAnswer(option)}
-                            disabled={isOptionsDisabled}
+                            onPress={() => setCurrentOptionSelected(option)}
                             key={option}
                             style={{
                                 borderWidth: 1.5,
@@ -121,7 +115,8 @@ const Quiz = ({allQuestions}) => {
         )
     }
     const renderNextButton = () => {
-        if (showNextButton) {
+        if (currentOptionSelected != null) {
+            console.log(currentOptionSelected);
             return (
                 <TouchableOpacity
                     onPress={handleNext}
@@ -137,7 +132,8 @@ const Quiz = ({allQuestions}) => {
                         justifyContent: 'center',
                         alignSelf: 'flex-end',
                     }}>
-                    <Text style={{fontSize: 18, color: COLORS.black, textAlign: 'center', fontWeight:"bold"}}>Next</Text>
+                    <Text
+                        style={{fontSize: 18, color: COLORS.black, textAlign: 'center', fontWeight: "bold"}}>Next</Text>
                 </TouchableOpacity>
             )
         } else {
@@ -201,62 +197,6 @@ const Quiz = ({allQuestions}) => {
 
                 {/* Next Button */}
                 {renderNextButton()}
-
-                {/* Score Modal */}
-                <Modal
-                    animationType="slide"
-                    transparent={true}
-                    visible={showScoreModal}
-                >
-                    <View style={{
-                        flex: 1,
-                        backgroundColor: COLORS.primary,
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                    }}>
-                        <View style={{
-                            backgroundColor: COLORS.white,
-                            width: '90%',
-                            borderRadius: 20,
-                            padding: 20,
-                            alignItems: 'center'
-                        }}>
-                            <Text style={{
-                                fontSize: 30,
-                                fontWeight: 'bold',
-                            }}>{score > (allQuestions.length / 2) ? 'Congratulations!' : 'Oops!'}</Text>
-
-                            <View style={{
-                                flexDirection: 'row',
-                                justifyContent: 'flex-start',
-                                alignItems: 'center',
-                                marginVertical: 20
-                            }}>
-                                <Text style={{
-                                    fontSize: 30,
-                                    color: score > (allQuestions.length / 2) ? COLORS.success : COLORS.error,
-                                    fontWeight:"bold"
-                                }}>{score}</Text>
-                                <Text style={{
-                                    fontSize: 20, color: COLORS.black, fontWeight:"bold"
-                                }}>/ {allQuestions.length}</Text>
-                            </View>
-                            {/* Retry Quiz button */}
-                            <TouchableOpacity
-                                onPress={restartQuiz}
-                                style={{
-                                    backgroundColor: COLORS.accent,
-                                    padding: 20, width: '100%', borderRadius: 20
-                                }}>
-                                <Text style={{
-                                    textAlign: 'center', color: COLORS.white, fontSize: 20, fontWeight:"bold"
-                                }}>Retry Quiz</Text>
-                            </TouchableOpacity>
-
-                        </View>
-
-                    </View>
-                </Modal>
 
                 {/* Background Image */}
                 <Image
