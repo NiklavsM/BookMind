@@ -75,15 +75,17 @@ const Quiz = ({allQuestions}) => {
                         color: COLORS.black,
                         fontSize: 20,
                         opacity: 0.6,
-                        marginRight: 2
+                        marginRight: 2,
+                        fontWeight: 'bold'
                     }}>{currentQuestionIndex + 1}</Text>
-                    <Text style={{color: COLORS.black, fontSize: 18, opacity: 0.6}}>/ {allQuestions.length}</Text>
+                    <Text style={{color: COLORS.black, fontSize: 18, opacity: 0.6, fontWeight: 'bold'}}>/ {allQuestions.length}</Text>
                 </View>
 
                 {/* Question */}
                 <Text style={{
                     color: COLORS.black,
-                    fontSize: 30
+                    fontSize: 30,
+                    fontWeight: 'bold'
                 }}>{allQuestions[currentQuestionIndex]?.question}</Text>
             </View>
         )
@@ -98,7 +100,7 @@ const Quiz = ({allQuestions}) => {
                             disabled={isOptionsDisabled}
                             key={option}
                             style={{
-                                borderWidth: 3,
+                                borderWidth: 1.5,
                                 borderColor: option == currentOptionSelected
                                     ? COLORS.success
                                     : COLORS.black,
@@ -110,7 +112,7 @@ const Quiz = ({allQuestions}) => {
                                 marginVertical: 10
                             }}
                         >
-                            <Text style={{fontSize: 20, color: COLORS.black}}>{option}</Text>
+                            <Text style={{fontSize: 20, color: COLORS.black, fontWeight: 'bold'}}>{option}</Text>
 
                         </TouchableOpacity>
                     ))
@@ -124,16 +126,18 @@ const Quiz = ({allQuestions}) => {
                 <TouchableOpacity
                     onPress={handleNext}
                     style={{
-                        marginTop: 20,
+                        marginTop: 65,
                         width: '40%',
                         height: 30,
                         backgroundColor: COLORS.white,
                         padding: 20,
-                        borderRadius: 20,
+                        borderRadius: 16,
                         borderColor: COLORS.black,
-                        borderWidth: 3
+                        borderWidth: 1.5,
+                        justifyContent: 'center',
+                        alignSelf: 'flex-end',
                     }}>
-                    <Text style={{fontSize: 20, color: COLORS.black, textAlign: 'center'}}>Next</Text>
+                    <Text style={{fontSize: 18, color: COLORS.black, textAlign: 'center', fontWeight:"bold"}}>Next</Text>
                 </TouchableOpacity>
             )
         } else {
@@ -175,7 +179,7 @@ const Quiz = ({allQuestions}) => {
 
     return (
         <SafeAreaView style={{
-            flex: 1
+            flex: 1,
         }}>
             <StatusBar barStyle="light-content" backgroundColor={COLORS.primary}/>
             <View style={{
@@ -219,7 +223,7 @@ const Quiz = ({allQuestions}) => {
                         }}>
                             <Text style={{
                                 fontSize: 30,
-                                fontWeight: 'bold'
+                                fontWeight: 'bold',
                             }}>{score > (allQuestions.length / 2) ? 'Congratulations!' : 'Oops!'}</Text>
 
                             <View style={{
@@ -230,10 +234,11 @@ const Quiz = ({allQuestions}) => {
                             }}>
                                 <Text style={{
                                     fontSize: 30,
-                                    color: score > (allQuestions.length / 2) ? COLORS.success : COLORS.error
+                                    color: score > (allQuestions.length / 2) ? COLORS.success : COLORS.error,
+                                    fontWeight:"bold"
                                 }}>{score}</Text>
                                 <Text style={{
-                                    fontSize: 20, color: COLORS.black
+                                    fontSize: 20, color: COLORS.black, fontWeight:"bold"
                                 }}>/ {allQuestions.length}</Text>
                             </View>
                             {/* Retry Quiz button */}
@@ -244,7 +249,7 @@ const Quiz = ({allQuestions}) => {
                                     padding: 20, width: '100%', borderRadius: 20
                                 }}>
                                 <Text style={{
-                                    textAlign: 'center', color: COLORS.white, fontSize: 20
+                                    textAlign: 'center', color: COLORS.white, fontSize: 20, fontWeight:"bold"
                                 }}>Retry Quiz</Text>
                             </TouchableOpacity>
 
