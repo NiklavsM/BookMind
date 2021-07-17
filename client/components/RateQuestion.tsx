@@ -2,40 +2,46 @@ import * as React from "react";
 import {Image, StyleSheet, Text, View} from "react-native"
 import Feather from 'react-native-vector-icons/Feather';
 
-const RateQuestion = ({question, correctOption, selectedOption}) => {
+const RateQuestion = ({index, question, correctOption, selectedOption}) => {
 
     return (
         <View style={styles.container}>
             <View style={{flexDirection: "row", justifyContent: "space-between"}}>
                 <View>
-                    <Text style={{fontSize: 15, width: 250, paddingBottom: 5}}>{question}</Text>
+                    <Text style={{fontSize: 15, width: 250, paddingBottom: 5, paddingRight:20}}>{index+1}. { question}</Text>
                     <View style={{flexDirection: "row", alignItems: "center"}}>
                         {correctOption != selectedOption ?
                             <>
                                 <Image
-                                    style={{width: 25, height: 20}}
+                                    style={styles.iconStyle}
                                     source={require('../assets/images/HandsDenied.png')}
                                 />
-                                <Text style={{marginRight: 10}}>
+                                <Text style={{marginRight: 10, color:"#FC6E47"}}>
                                     {selectedOption}
                                 </Text>
                             </>
                             : <></>
                         }
                         <Image
-                            style={{width: 25, height: 20}}
+                            style={styles.iconStyle}
                             source={require('../assets/images/HandsCheckmark.png')}
                         />
-                        <Text>{correctOption}</Text>
+                        <Text style={{color:"#1FAD66"}}>{correctOption}</Text>
                     </View>
                 </View>
                 <View style={{flexDirection: "row"}}>
 
                     <View style={styles.iconContainer}>
-                        <Feather size={23} name="smile"/>
+                        <Image
+                            style={styles.iconStyle}
+                            source={require('../assets/images/smile.png')}
+                        />
                     </View>
                     <View style={styles.iconContainer}>
-                        <Feather size={23} name="align-justify"/>
+                        <Image
+                            style={styles.iconStyle}
+                            source={require('../assets/images/tired.png')}
+                        />
                     </View>
                 </View>
 
@@ -58,10 +64,15 @@ const styles = StyleSheet.create(
             alignItems: "center",
             alignContent: 'center',
             borderWidth: 1,
-            borderRadius: 7,
+            borderRadius: 12,
             width: 35,
             height: 35,
             margin: 3,
+        },
+        iconStyle: {
+            width: 20,
+            height: 20,
+            margin:5,
         }
     }
 )
