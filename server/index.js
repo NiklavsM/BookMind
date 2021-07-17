@@ -30,6 +30,11 @@ MongoClient.connect(uri, {
             .catch(error => console.error(error))
     })
 
+    app.post('/getBookQuestions', (req, res) => {
+        console.log("QUESTION REQUESTED")
+        console.log(req.fields)
+    })
+
 
 })
 

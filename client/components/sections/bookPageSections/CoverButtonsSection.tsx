@@ -1,7 +1,9 @@
 import * as React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native"
 import BookWIthPointsCardFullBookScreen from '../../cards/cardParts/BookWIthPointsCardFullBookScreen';
-import {NavigationInjectedProps} from 'react-navigation';
+import { NavigationInjectedProps } from 'react-navigation';
+import { useEffect, useState } from 'react';
+import questionApi from '../../../api/questionApi';
 
 interface CoverButtonsSection {
     title: string,
@@ -10,6 +12,18 @@ interface CoverButtonsSection {
 }
 
 const CoverButtonsSection = ({title, imgUrl, navigation}: CoverButtonsSection & NavigationInjectedProps) => {
+
+    const [questions, setQuestions] = useState([]);
+
+    useEffect(() => {
+        loadQuestions();
+    }, []);
+
+    const loadQuestions = async() => {
+        await questionApi.getQuestions({"title": title}).then((r: any) => {
+            setQuestions(r.data);
+        })
+    }
 
     const allQuestions = [
         {
