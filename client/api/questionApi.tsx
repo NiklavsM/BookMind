@@ -1,7 +1,14 @@
 import client from './client'
+import {QuestionI} from "../domain/QuestionI";
+import {callApi} from "./apiUtils";
 
-const getQuestions = (data) => {
+
+export const getQuestions = (data) => {
     return client.post("/getBookQuestions", data);
 };
 
-export default {getQuestions}
+export const addQuestion = (question: QuestionI) => {
+    callApi('addBookQuestion', question)
+        .then(result => console.log(result))
+        .catch(error => console.log(error))
+}

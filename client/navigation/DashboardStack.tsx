@@ -18,7 +18,7 @@ const StackScreenOptions = {
     },
 }
 
-const DashboardStack = ({route}) => {
+const DashboardStack = () => {
 
     const Stack = createStackNavigator();
 

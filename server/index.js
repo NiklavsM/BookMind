@@ -20,8 +20,8 @@ MongoClient.connect(uri, {
     const db = client.db('bookApp')
     const questionsCollection = db.collection('users');
 
-    app.post('/question', (req, res) => {
-        console.log("HERE " + req.body)
+    app.post('/addBookQuestion', (req, res) => {
+        console.log(req.body)
         questionsCollection.insertOne(req.body)
             .then(result => {
                 // console.log(result)
@@ -32,7 +32,7 @@ MongoClient.connect(uri, {
 
     app.post('/getBookQuestions', (req, res) => {
         console.log("QUESTION REQUESTED")
-        console.log(req.fields)
+        console.log(req)
     })
 
 

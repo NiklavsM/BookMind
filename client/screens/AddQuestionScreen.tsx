@@ -1,9 +1,14 @@
 import * as React from "react";
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {StyleSheet, Text, TextInput, TouchableOpacity} from "react-native"
 import Screen from "../components/Screen";
+import {addQuestion} from "../api/questionApi";
+import Context from "../context/context";
 
-const AddQuestionScreen = () => {
+const AddQuestionScreen = ({route}) => {
+
+    const context = useContext(Context)
+
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState("");
     const [optionTwo, setOptionTwo] = useState("");
@@ -51,8 +56,18 @@ const AddQuestionScreen = () => {
             <TouchableOpacity
                 style={styles.saveButton}
                 onPress={() => {
+                    console.log("LOL")
+                    addQuestion({
+                        book: route.params.title,
+                        answer: answer,
+                        options: [answer, optionTwo, optionThree, optionFour],
+                        question: question,
+                        questionAuthor: context.email,
+                    })
                 }}
-            ><Text>Save</Text></TouchableOpacity>
+            >
+                <Text>Save</Text>
+            </TouchableOpacity>
         </Screen>
     )
 }

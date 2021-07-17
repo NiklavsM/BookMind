@@ -7,7 +7,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import DashboardStack from "./DashboardStack";
 
-const BottomNavigation = ({route}) => {
+const BottomNavigation = () => {
     const Tab = createBottomTabNavigator();
 
     return (
@@ -32,7 +32,7 @@ const BottomNavigation = ({route}) => {
                            inactiveTintColor: 'gray',
                        }}
         >
-            <Tab.Screen name="Dashboard" component={DashboardStack} initialParams={{route}}/>
+            <Tab.Screen name="Dashboard" component={DashboardStack}/>
             <Tab.Screen name="Your Adventures" component={AdventuresScreen}/>
             <Tab.Screen name="Achievements" component={StatsScreen}/>
         </Tab.Navigator>
