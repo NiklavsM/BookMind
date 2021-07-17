@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from "react-native"
+import {StyleSheet, Text, View} from "react-native"
 import TrendingBooksFeed from '../../feeds/TrendingBooksFeed';
 
 const TrendingBooksSection = () => {
@@ -25,7 +25,8 @@ const styles = StyleSheet.create({
         paddingTop: "11%"
     },
     upperSection: {
-        paddingBottom: 10
+        paddingBottom: 10,
+        alignContent: "center",
     },
     upperTextSection: {
         flexDirection: "row",

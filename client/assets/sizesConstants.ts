@@ -1,1 +1,2 @@
-export const buttonHeight = 30;
+export const buttonHeight = 35;
+export const headerFontSize = 20;

@@ -31,6 +31,7 @@ const CoverButtonsSection = ({title, imgUrl, navigation}: CoverButtonsSection & 
             <View style={styles.coverAndQuestions}>
                 <BookWIthPointsCardFullBookScreen imgUrl={imgUrl}/>
                 <View style={styles.buttons}>
+                    {questions.length > 0 &&
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => {
@@ -39,6 +40,7 @@ const CoverButtonsSection = ({title, imgUrl, navigation}: CoverButtonsSection & 
                         }}>
                         <Text>Take a quiz</Text>
                     </TouchableOpacity>
+                    }
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => {
