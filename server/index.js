@@ -18,7 +18,9 @@ MongoClient.connect(uri, {
     useUnifiedTopology: true,
 }).then(client => {
     const db = client.db('bookApp')
-    const questionsCollection = db.collection('users');
+    const questionsCollection = db.collection('questions');
+    const booksCollection = db.collection('books');
+    const usersCollection = db.collection('users');
 
     app.post('/addBookQuestion', (req, res) => {
         console.log(req.body)
