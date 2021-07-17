@@ -8,6 +8,7 @@ const getInit = (body?: any) => (
         body: JSON.stringify(body)
     }
 )
-export const callApi = (url: string,body?: any) => {
-    return fetch('http://10.0.2.2:3000/' + url, getInit(body));
+export const callApi = (url: string, body?: any) => {
+    return fetch('http://10.0.2.2:3000/' + url, getInit(body))
+        .then(response => response.json());
 }

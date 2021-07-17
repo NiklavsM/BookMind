@@ -36,15 +36,15 @@ MongoClient.connect(uri, {
     app.post('/getBookQuestions', (req, res) => {
         const database = client.db('bookApp');
         const questions = database.collection('questions');
-        const query = { title: req.body.title };
+        const query = {title: req.body.title};
 
         // getBook(client, database, questions, query)
-            questions.findOne(query).then(book=>{
-                if(book != null && book.questions != null) {
-                    console.log(book.questions);
-                    res.send("string")
-                }
-            })
+        questions.findOne(query).then(book => {
+            if (book != null && book.questions != null) {
+                console.log(book.questions);
+                res.send(book.questions)
+            }
+        })
 
         console.log("QUESTIONS REQUESTED")
         console.log(req.body)

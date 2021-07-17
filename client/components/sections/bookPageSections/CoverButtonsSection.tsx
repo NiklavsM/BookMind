@@ -20,7 +20,7 @@ const CoverButtonsSection = ({title, imgUrl, navigation}: CoverButtonsSection & 
     }, []);
 
     const loadQuestions = async () => {
-        await getQuestions({"title": title}).then((r: any) => {
+        await getQuestions({title: title}).then((r: any) => {
             console.log(r)
             console.log(r.field)
             setQuestions(r.data);
