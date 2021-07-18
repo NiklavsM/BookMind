@@ -6,7 +6,7 @@ import { NavigationInjectedProps } from 'react-navigation';
 const AfterQuizAnimation = ({navigation}: NavigationInjectedProps) => {
 
     return (
-        <View style={{paddingTop: 90, padding: 50, justifyContent: 'center', alignItems: 'center', backgroundColor:'white'}}>
+        <View style={{paddingTop: 90, padding: 50, justifyContent: 'center', alignItems: 'center', backgroundColor:'white', flex:1}}>
             <Text style={{fontSize: 30}}>WoW you're so smart</Text>
             <Text style={{fontSize: 25, paddingBottom: 20}}>keep going!</Text>
             <Image style={{width: 330, height: 330}}
