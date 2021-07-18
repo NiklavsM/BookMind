@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import {StyleSheet, Text, TouchableOpacity, View} from "react-native"
 
 const BookSummarySection = ({title, author, category, description}) => {
 
@@ -12,7 +12,7 @@ const BookSummarySection = ({title, author, category, description}) => {
                 onPress={() => {
                     console.log("clicked")
                 }}>
-                <Text style={{margin: 20}}>{category}</Text>
+                <Text style={{margin: 20, color: "#124BDD",}}>{category}</Text>
             </TouchableOpacity>
             <Text>{description}</Text>
         </View>
