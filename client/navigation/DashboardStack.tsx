@@ -11,7 +11,7 @@ const StackScreenOptions = {
     headerShown: true,
     headerStyle: {
         backgroundColor: 'tomato',
-        height: 65
+        height: 80,
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
