@@ -1,15 +1,11 @@
 import * as React from 'react';
-import { useContext } from 'react';
-import { Image, StyleSheet, Text, View } from "react-native"
-import Context from '../../../context/context';
+import { StyleSheet, Text, View } from "react-native"
 
-const AchievementsHeader = () => {
-    const context = useContext(Context);
+const ChampionsBoard = () => {
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.headerText}>Achievements</Text>
-            <Image style={styles.image} source={{uri: context.profileUrl}}/>
+        <View>
+            <Text>Bookworm Champions board</Text>
         </View>
     )
 }
@@ -35,5 +31,4 @@ const styles = StyleSheet.create({
     }
 });
 
-
-export default AchievementsHeader;
+export default ChampionsBoard;
