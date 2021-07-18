@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
 
     },
     buttonText:{
+        width:100,
         color:"#124BDD",
     }
 })

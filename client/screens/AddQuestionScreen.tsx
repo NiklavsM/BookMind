@@ -12,7 +12,6 @@ const AddQuestionScreen = ({route, navigation}: NavigationInjectedProps & any) =
     const [answer, setAnswer] = useState("");
     const [optionTwo, setOptionTwo] = useState("");
     const [optionThree, setOptionThree] = useState("");
-    // const [optionFour, setOptionFour] = useState("");
 
     const onSave = () => {
         addQuestion({
@@ -26,7 +25,7 @@ const AddQuestionScreen = ({route, navigation}: NavigationInjectedProps & any) =
             position: 'bottom',
             text1: 'Question Added',
         });
-        navigation.goBack();
+        navigation.navigate("Dashboard");
     }
 
     return (
@@ -61,12 +60,6 @@ const AddQuestionScreen = ({route, navigation}: NavigationInjectedProps & any) =
                 value={optionThree}
                 onChangeText={setOptionThree}
             />
-            {/*<TextInput*/}
-            {/*    maxLength={40}*/}
-            {/*    style={styles.singleLineInput}*/}
-            {/*    value={optionFour}*/}
-            {/*    onChangeText={setOptionFour}*/}
-            {/*/>*/}
 
             <TouchableOpacity
                 style={styles.saveButton}

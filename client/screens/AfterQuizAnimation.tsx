@@ -26,7 +26,7 @@ const AfterQuizAnimation = ({navigation}: NavigationInjectedProps) => {
                 onPress={() => {
                     //share I guess
                 }}>
-                <Text>Share</Text>
+                <Text>Brag to friends</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -43,7 +43,7 @@ const AfterQuizAnimation = ({navigation}: NavigationInjectedProps) => {
                 onPress={() => {
                     navigation.navigate("Dashboard")
                 }}>
-                <Text>Next</Text>
+                <Text>Dashboard</Text>
             </TouchableOpacity>
             </View>
         </View>
