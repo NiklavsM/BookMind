@@ -10,7 +10,7 @@ const ChallengeSection = () => {
             <View style={styles.upperSection}>
                 <View style={styles.upperTextSection}>
                     <Text style={styles.bigBoldFont}>Weekly challenge</Text>
-                    <Text style={styles.regularText}>See more</Text>
+                    <Text style={{...styles.regularText, color:"#2C80FD"}}>See more</Text>
                 </View>
                 <Text style={styles.regularText}>This weeks way to jump 4 levels</Text>
             </View>

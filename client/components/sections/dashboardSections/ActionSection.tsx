@@ -8,10 +8,10 @@ const ActionSection = () => {
         <View>
             <View style={styles.upperSection}>
                 <View style={styles.upperTextSection}>
-                    <Text style={styles.bigBoldFont}>Actions/Updates</Text>
-                    <Text style={styles.regularText}>See more</Text>
+                    <Text style={styles.bigBoldFont}>Activity</Text>
+                    <Text style={{...styles.regularText, color:"#2C80FD"}}>See more</Text>
                 </View>
-                <Text style={styles.regularText}>Some text</Text>
+                <Text style={styles.regularText}>Browse your activity</Text>
             </View>
             <ActionCard source={require("../../../assets/images/GoldMedal.png")}
                         text="Well Done! You finished your 100th adventure!" date="19th July 2021"/>
