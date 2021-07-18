@@ -8,6 +8,7 @@ const AchievementCard = ({description, date, uri}: any) => {
         <TouchableWithoutFeedback>
             <View style={styles.card}>
                 <View style={styles.upperPart}>
+                    {/*<Image style={styles.image} source={{uri: 'https://sadanduseless.b-cdn.net/wp-content/uploads/2017/09/sticker1.png'}}/>*/}
                     <Image style={styles.image} source={{uri: 'https://sadanduseless.b-cdn.net/wp-content/uploads/2017/09/sticker1.png'}}/>
                 </View>
                 <View style={styles.lowerPart}>

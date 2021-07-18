@@ -12,9 +12,9 @@ const ChallengeSection = () => {
                     <Text style={styles.bigBoldFont}>Weekly challenge</Text>
                     <Text style={styles.regularText}>See more</Text>
                 </View>
-                <Text style={styles.regularText}>Some text</Text>
+                <Text style={styles.regularText}>This weeks way to jump 4 levels</Text>
             </View>
-            <WeeklyChallengeCard challengeName = "Title of the challenge" description = "Short Summary"/>
+            <WeeklyChallengeCard challengeName = "Pass 5 QUIZZES!" description = "Challenge 3 friends and get 100 bonus points"/>
         </View>
     )
 }

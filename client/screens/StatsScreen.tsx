@@ -1,14 +1,15 @@
 import * as React from 'react';
 import {Text, View} from "react-native"
 import Screen from '../components/Screen';
+import AchievementsHeader from '../components/sections/achievementsSections/AchievementsHeader';
+import AchievementsBadgeSection from '../components/sections/achievementsSections/AchievementsBadgeSection';
 
 const StatsScreen = () => {
 
     return (
         <Screen>
-            <View>
-                <Text>Stats Screen</Text>
-            </View>
+            <AchievementsHeader/>
+            <AchievementsBadgeSection/>
         </Screen>
     )
 }
