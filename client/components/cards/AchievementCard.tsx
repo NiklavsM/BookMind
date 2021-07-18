@@ -1,19 +1,17 @@
 import * as React from 'react';
-import { View, StyleSheet, SafeAreaView, TouchableWithoutFeedback, Image, Text } from "react-native"
-import ColourPalette from '../../assets/ColourPalette';
+import {Image, StyleSheet, Text, TouchableWithoutFeedback, View} from "react-native"
 
-const AchievementCard = ({description, date, uri}: any) => {
+const AchievementCard = ({description, date, source}: any) => {
 
     return (
         <TouchableWithoutFeedback>
             <View style={styles.card}>
                 <View style={styles.upperPart}>
-                    {/*<Image style={styles.image} source={{uri: 'https://sadanduseless.b-cdn.net/wp-content/uploads/2017/09/sticker1.png'}}/>*/}
-                    <Image style={styles.image} source={{uri: 'https://sadanduseless.b-cdn.net/wp-content/uploads/2017/09/sticker1.png'}}/>
+                    <Image style={styles.image} source={source}/>
                 </View>
                 <View style={styles.lowerPart}>
-                    <Text>{description}</Text>
-                    <Text>{date}</Text>
+                    <Text style={{textAlign: "center",}}>{description}</Text>
+                    <Text style={{alignSelf: "center", fontSize:12}}>{date}</Text>
                 </View>
             </View>
         </TouchableWithoutFeedback>

@@ -1,62 +1,43 @@
 import * as React from 'react';
-import { useEffect, useState } from 'react';
-import { FlatList, ScrollView, Text, View } from "react-native"
+import {FlatList} from "react-native"
 import AchievementCard from '../cards/AchievementCard';
 
+const achievementsData = [
+    {
+        description: "Did your first 100 questions",
+        date: "19th of July 2021",
+        source: require("../../assets/images/SilverMedal.png"),
+    },
+    {
+        description: "Got 1000 question upvotes",
+        date: "19th of July 2021",
+        source: require("../../assets/images/GoldMedal.png"),
+    },
+    {
+        description: "Did quiz a day challange",
+        date: "19th of July 2021",
+        source: require("../../assets/images/BronzeMedal.png"),
+    },
+]
+
 const AchievementsFeed = () => {
-
-    const [achievements, setAchievements] = useState<any[]>([]);
-    const [firstMount,setFirstMount] = useState(true);
-
-    useEffect(() => {
-        if (firstMount) {
-            getAchievements().then(r => {
-                setAchievements(r)
-            })
-        }
-        setFirstMount(false)
-    })
-
-    const getAchievements = async () => {
-        let achievementsArr = []
-        let achievement = {}
-        achievement["description"] = "achievement 1"
-        achievement["date"] = "date 1"
-        achievementsArr.push(achievement)
-
-        achievement = {}
-        achievement["description"] = "achievement 2"
-        achievement["date"] = "date 2"
-        achievementsArr.push(achievement)
-
-        achievement = {}
-        achievement["description"] = "achievement 3"
-        achievement["date"] = "date 3"
-        achievementsArr.push(achievement)
-
-        achievement = {}
-        achievement["description"] = "achievement 4"
-        achievement["date"] = "date 4"
-        achievementsArr.push(achievement)
-
-        return achievementsArr;
-    }
 
     const achievementRender = ({item}: any) => (
         <AchievementCard
             description={item.description}
             date={item.date}
+            source={item.source}
         />
     )
 
     return (
-            <FlatList
-                horizontal={true}
-                data={achievements}
-                keyExtractor={item => item.description.toString()}
-                renderItem={achievementRender}
-                showsHorizontalScrollIndicator={false}
-            />
+        <FlatList
+            horizontal={true}
+            data={achievementsData}
+            keyExtractor={item => item.description}
+            renderItem={achievementRender}
+            showsHorizontalScrollIndicator={false}
+        />
     )
 }
 
