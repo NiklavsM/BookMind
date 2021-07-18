@@ -6,6 +6,7 @@ import BookScreen from '../screens/BookScreen';
 import QuizScreen from '../screens/QuizScreen';
 import AddQuestionScreen from "../screens/AddQuestionScreen";
 import QuizCompleteScreen from "../quiz/screens/QuizCompleteScreen";
+import AfterQuizAnimation from '../screens/AfterQuizAnimation';
 
 const StackScreenOptions = {
     headerShown: true,
@@ -31,6 +32,7 @@ const DashboardStack = () => {
             <Stack.Screen name="Books" component={BooksScreen} options={StackScreenOptions}/>
             <Stack.Screen name="Book" component={BookScreen} options={StackScreenOptions}/>
             <Stack.Screen name="Add Question" component={AddQuestionScreen} options={StackScreenOptions}/>
+            <Stack.Screen name="Animation" component={AfterQuizAnimation} options={StackScreenOptions}/>
         </Stack.Navigator>
     )
 }
