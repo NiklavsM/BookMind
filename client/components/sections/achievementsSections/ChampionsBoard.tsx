@@ -5,8 +5,8 @@ import EmptyFeed from './EmptyFeed';
 
 const ChampionsBoard = () => {
 
-    const [selected, changeSelected] = useState('OVERALL');
-    const [cat, changeCat] = useState("APPROVED");
+    const [selected, changeSelected] = useState('0');
+    const [cat, changeCat] = useState("OVERALL");
 
     const items = [
         {
@@ -70,7 +70,7 @@ const ChampionsBoard = () => {
                 showsHorizontalScrollIndicator={false}
             />
             <View style={{flex: 1}}>
-                { selected!=='1' ?  <EmptyFeed category={cat}/> : <EmptyFeed category="OVERALL"/> }
+                {<EmptyFeed category={cat}/>}
             </View>
         </View>
     )
