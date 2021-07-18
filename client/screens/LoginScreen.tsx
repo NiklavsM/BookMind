@@ -38,8 +38,8 @@ const LoginScreen = ({navigation}: NavigationInjectedProps) => {
 
     return (
         <View style={{justifyContent: "center", flex: 1, padding: 30, backgroundColor: "white"}}>
-            <Image style={{alignSelf: "center", width:100, height:100}} source={require("../assets/book.png")}/>
-            <Text style={styles.header}>Hi, there! You can log in here:</Text>
+            <Image style={{alignSelf: "center", width:300, height:100}} source={require("../assets/BookMindLogo.png")}/>
+            <Text style={styles.header}>Hi, there..</Text>
             <View>
                 <Text style={{fontWeight: "bold"}}>Username</Text>
                 <TextInput value={value}
