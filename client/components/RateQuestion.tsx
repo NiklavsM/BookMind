@@ -13,7 +13,7 @@ const RateQuestion = ({index, question, correctOption, selectedOption}) => {
                         paddingBottom: 5,
                         paddingRight: 20
                     }}>{index + 1}. {question}</Text>
-                    <View style={{flexDirection: "row", alignItems: "center"}}>
+                    <View style={{flexDirection: "row", alignItems: "center", width:110}}>
                         {correctOption != selectedOption ?
                             <>
                                 <Image

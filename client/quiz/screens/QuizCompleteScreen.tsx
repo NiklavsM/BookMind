@@ -19,7 +19,7 @@ const QuizCompleteScreen = ({navigation, route}) => {
                                   question={question.question}
                                   selectedOption={question.selectedOption}/>
                 ))}
-                <TouchableOpacity style={styles.submitButton} onPress={() => navigation.navigate("Dashboard")}>
+                <TouchableOpacity style={styles.submitButton} onPress={() => navigation.navigate("AfterQuizAnimation")}>
                     <Text>Finish</Text>
                 </TouchableOpacity>
             </View>
