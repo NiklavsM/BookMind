@@ -3,6 +3,8 @@ import { View, Text } from "react-native"
 
 const PointsCircle = () => {
 
+
+
     return (
         <View style={{
             width: 60,

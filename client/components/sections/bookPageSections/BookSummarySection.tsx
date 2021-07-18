@@ -27,7 +27,9 @@ const styles = StyleSheet.create({
     category: {
         height: 35,
         borderRadius: 10,
-        backgroundColor: "#dcdcdc",
+        borderWidth: 1,
+        borderColor: "#124BDD",
+        backgroundColor: "#f5f9ff",
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: '10%',
