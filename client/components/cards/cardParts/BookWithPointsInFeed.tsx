@@ -2,14 +2,15 @@ import * as React from 'react';
 import { Image, StyleSheet, TouchableWithoutFeedback, View } from "react-native"
 import PointsCircle from '../../PointsCircle';
 
-const BookWithPointsInFeed = ({imgUrl}: any) => {
+const BookWithPointsInFeed = ({imgUrl, points}: any) => {
+
 
     return (
         <TouchableWithoutFeedback>
             <View style={styles.card}>
                 <View style={styles.upperPart}>
                     <View style={styles.pointsCircle}>
-                        <PointsCircle/>
+                        <PointsCircle points={points}/>
                     </View>
                 </View>
                 <View style={styles.lowerPart}>
