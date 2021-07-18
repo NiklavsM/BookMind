@@ -30,7 +30,7 @@ const AddQuestionScreen = ({route, navigation} : NavigationInjectedProps & any) 
 
     return (
         <Screen>
-            <Text style={styles.text}>Question</Text>
+            <Text style={styles.championText}>Question</Text>
             <TextInput
                 maxLength={200}
                 multiline numberOfLines={4}
@@ -39,7 +39,7 @@ const AddQuestionScreen = ({route, navigation} : NavigationInjectedProps & any) 
                 onChangeText={setQuestion}
             />
 
-            <Text style={styles.text}>Correct answer</Text>
+            <Text style={styles.championText}>Correct answer</Text>
             <TextInput
                 maxLength={40}
                 style={styles.singleLineInput}
@@ -47,7 +47,7 @@ const AddQuestionScreen = ({route, navigation} : NavigationInjectedProps & any) 
                 onChangeText={setAnswer}
             />
 
-            <Text style={styles.text}>Other options</Text>
+            <Text style={styles.championText}>Other options</Text>
             <TextInput
                 maxLength={40}
                 style={styles.singleLineInput}
@@ -77,7 +77,7 @@ const AddQuestionScreen = ({route, navigation} : NavigationInjectedProps & any) 
 }
 
 const styles = StyleSheet.create({
-    text: {
+    championText: {
         fontWeight: "bold"
     },
     multilineInput: {

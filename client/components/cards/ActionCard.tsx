@@ -11,8 +11,8 @@ const ActionCard = ({text, date}: any) => {
                     <Image style={styles.image} source={{uri: 'https://thumbs.dreamstime.com/b/gold-badge-5392868.jpg'}}/>
                 </View>
                 <View style={styles.rightPart}>
-                    <Text style={styles.text}>{text}</Text>
-                    <Text style={styles.text}>{date}</Text>
+                    <Text style={styles.championText}>{text}</Text>
+                    <Text style={styles.championText}>{date}</Text>
                 </View>
             </View>
         </TouchableWithoutFeedback>
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         height: '100%',
         position: 'absolute',
     },
-    text: {
+    championText: {
         fontSize: 17
     }
 

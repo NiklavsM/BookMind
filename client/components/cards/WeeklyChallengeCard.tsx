@@ -9,7 +9,7 @@ const WeeklyChallengeCard = ({challengeName, description}: any) => {
             <View style={styles.card}>
                 <View style={styles.upperPart}>
                     <Image style={styles.image}
-                           source={{uri: 'https://i0.wp.com/galileoteachers.org/wp-content/uploads/sites/2/2015/09/go-lab-challenge-banner.png?resize=700%2C311'}}/>
+                           source={{uri: 'https://media.giphy.com/media/LcFnEHq9IWaAVlu8qa/giphy.gif'}}/>
                 </View>
                 <View style={styles.lowerPart}>
                     <Text style={styles.boldText}>{challengeName}</Text>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         height: "17%",
     },
     image: {
-        width: '100%',
+        width: '73%',
         height: '100%',
     },
     boldText: {
