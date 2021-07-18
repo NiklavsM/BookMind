@@ -33,11 +33,11 @@ Book Mind solves the problems above by:
  <h2>Technologies</h2>
  Within 2 days we managed to build an mvp with fully working core functionality.
  <br>
- <h3>You can download out app by pasting this url in the browser on mobile</h3>
+ <h3>You can download our app by pasting this url in the browser on mobile</h3>
  <br>
  https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40alinavarkki/BookMind-b484084817014799b7c6d80002480b41-signed.apk
 <br>
-It doesn't work if you just click on it, needs to be pasted in manually
+It doesn't work if you just click on it, it needs to be pasted in manually
 <ul>
   <li>react native <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/></li>
  <li>Google Books Api</li> 
@@ -60,3 +60,11 @@ It doesn't work if you just click on it, needs to be pasted in manually
 
 <br>
 <br>
+
+<h2>Visuals</h2>
+
+<p>
+<img src="AcceptChallenge.gif"/ width="31%">
+<img src="client/Assets/team.png"/ width="32.35%">
+ <img src="client/Assets/company.png"/ width="32.35%">
+</p>
