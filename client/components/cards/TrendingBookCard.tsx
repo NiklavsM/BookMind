@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
     boldText: {
         fontWeight: 'bold',
         fontSize: 16,
-        alignSelf: "center",
     }
 })
 

@@ -9,9 +9,9 @@ const AchievementsSection = () => {
             <View style={styles.upperSection}>
                 <View style={styles.upperTextSection}>
                     <Text style={styles.bigBoldFont}>Achievements</Text>
-                    <Text style={styles.regularText}>See more</Text>
+                    <Text style={{...styles.regularText, color:"#2C80FD"}}>See more</Text>
                 </View>
-                <Text style={styles.regularText}>Some text</Text>
+                <Text style={styles.regularText}>View Your accomplishments</Text>
             </View>
             <AchievementsFeed/>
         </View>
