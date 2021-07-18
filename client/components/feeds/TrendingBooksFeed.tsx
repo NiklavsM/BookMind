@@ -5,14 +5,21 @@ import TrendingBookCard from '../cards/TrendingBookCard';
 const trendingBooksData = [{
     title: "Sapiens",
     author: "Yuval Noah Harari",
-    imgUrl: "http://books.google.com/books/content?id=1EiJAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    imgUrl: "https://www.porchlightbooks.com/globalassets/book-covers/9780062316097.jpg?w=1000&scale=both&mode=crop&u=637031281011300000",
     category: "Social Science",
     description: "**THE MILLION COPY BESTSELLER** Sapiens showed us where we came from. In uncertain times, Homo Deus shows us where we're going. 'Ho\n" +
         "mo Deus will shock you. It will entertain you. It will make you think in ways you had not thought before' Daniel Kahneman, bestselling author of Thinking\n" +
         ", Fast and Slow Yuval Noah Harari envisions a near future in which we face a new set of challenges. Homo Deus explores the projects, dreams and nightmare\n" +
         "s that will shape the twenty-first century and beyond - from overcoming death to creating artificial life. It asks the fundamental questions: how can we\n" +
         "protect this fragile world from our own destructive power? And what does our future hold?"
-}, {
+},  {
+    title: "How To Win Friends and Influence People",
+    author: "Dale Carnegie",
+    imgUrl: "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781439167342/how-to-win-friends-and-influence-people-9781439167342_hr.jpg",
+    category: "Development",
+    description: "Millions of people around the world have improved their lives based on the teachings of Dale Carnegie. In How to Win Friends and Influence People, he offers practical advice and techniques, in his exuberant and conversational style, for how to get out of a mental rut and make life more rewarding"
+},
+    {
     title: "Master Your Focus",
     author: "Thibaut Meurisse",
     imgUrl: "http://books.google.com/books/content?id=Ic1czgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api\"",
@@ -43,7 +50,7 @@ const trendingBooksData = [{
         "sessions, artistry, devilry, and compulsion for control that shaped his approach to business and the innovative products that resulted. His tale is instr\n" +
         "uctive and cautionary, filled with lessons about innovation, character, leadership, and values. Steve Jobs is the inspiration for the movie of the same n\n" +
         "ame starring Michael Fassbender, Kate Winslet, Seth Rogen, and Jeff Daniels, directed by Danny Boyle with a screenplay by Aaron Sorkin."
-}]
+},]
 
 const TrendingBooksFeed = ({navigation}) => {
 

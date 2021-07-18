@@ -9,12 +9,12 @@ const achievementsData = [
         source: "https://media.giphy.com/media/Xz4nrKGYIttw65Rm2Q/giphy.gif"
     },
     {
-        description: "Got 1000 question upvotes",
+        description: "Chaellenged a friend",
         date: "19th of July 2021",
         source: "https://media.giphy.com/media/im9e9e7jwWdel8PJO4/giphy.gif"
     },
     {
-        description: "Did quiz a day challange",
+        description: "Did quiz a day challange, Smart cookie!",
         date: "19th of July 2021",
         source: "https://media.giphy.com/media/JFdqqYDTocJaNgdfxZ/giphy.gif"
 

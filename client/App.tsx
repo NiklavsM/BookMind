@@ -9,9 +9,9 @@ export default function App() {
     return (
         <GlobalState>
             {/*<StatusBar style="auto"/>*/}
-            {/*<MainNavigator/>*/}
+            <MainNavigator/>
             {/*    <QuizScreen/>*/}
-            <AfterQuizAnimation/>
+            {/*<AfterQuizAnimation/>*/}
             <Toast ref={(ref) => Toast.setRef(ref)}/>
         </GlobalState>
     );
