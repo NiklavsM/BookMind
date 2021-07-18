@@ -9,7 +9,7 @@ const BookWIthPointsCardFullBookScreen = ({imgUrl}) => {
             <View style={styles.card}>
                 <View style={styles.upperPart}>
                     <View style={styles.pointsCircle}>
-                        <PointsCircle/>
+                        <PointsCircle points={"earn"}/>
                     </View>
                 </View>
                 <View style={styles.lowerPart}>

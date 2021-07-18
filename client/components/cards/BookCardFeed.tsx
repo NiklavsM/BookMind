@@ -22,6 +22,11 @@ const BookCardFeed = ({
                           navigation
                       }: BookCardFeedProps & NavigationInjectedProps) => {
 
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+
     const info = {title, author, imgUrl, category, description}
 
     return (
@@ -31,7 +36,7 @@ const BookCardFeed = ({
         }
         }>
             <View style={styles.card}>
-                <BookWithPointsInFeed imgUrl={imgUrl}/>
+                <BookWithPointsInFeed imgUrl={imgUrl} points={Math.round(getRandomArbitrary(20, 35))}/>
                 <View style={styles.rightSection}>
                     <Text style={styles.title}>{title}</Text>
                     <Text style={styles.author}>{author}</Text>
