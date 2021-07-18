@@ -5,6 +5,7 @@ import AchievementsHeader from '../components/sections/achievementsSections/Achi
 import ChampionsBoard from "../components/sections/achievementsSections/ChampionsBoard";
 import AchievementsCategoryScores from "../components/sections/achievementsSections/AchievementsCategoryScores";
 import AchievementsBadgeSection from "../components/sections/achievementsSections/AchievementsBadgeSection";
+import RatingCard from '../components/cards/RatingCard';
 
 const StatsScreen = () => {
 
