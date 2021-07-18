@@ -27,7 +27,6 @@ const DashboardScreen = ({navigation}: NavigationInjectedProps) => {
                 showsVerticalScrollIndicator={false}
                 ListHeaderComponent={
                     <View>
-
                         <TrendingBooksSection navigation={navigation}/>
                         <AchievementsSection/>
                         <ChallengeSection/>

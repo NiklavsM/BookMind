@@ -1,21 +1,26 @@
 import * as React from 'react';
-import { ScrollView, Text, View } from "react-native"
+import {FlatList} from "react-native"
 import Screen from '../components/Screen';
 import AchievementsHeader from '../components/sections/achievementsSections/AchievementsHeader';
-import AchievementsBadgeSection from '../components/sections/achievementsSections/AchievementsBadgeSection';
-import AchievementsCategoryScores from '../components/sections/achievementsSections/AchievementsCategoryScores';
-import ChampionsBoard from '../components/sections/achievementsSections/ChampionsBoard';
+import ChampionsBoard from "../components/sections/achievementsSections/ChampionsBoard";
+import AchievementsCategoryScores from "../components/sections/achievementsSections/AchievementsCategoryScores";
+import AchievementsBadgeSection from "../components/sections/achievementsSections/AchievementsBadgeSection";
 
 const StatsScreen = () => {
 
     return (
         <Screen>
-            <ScrollView>
-                <AchievementsHeader/>
-                <AchievementsBadgeSection/>
-                <AchievementsCategoryScores/>
-                <ChampionsBoard/>
-            </ScrollView>
+            <FlatList
+                showsVerticalScrollIndicator={false}
+                ListHeaderComponent={
+                    <>
+                        <AchievementsHeader/>
+                        <AchievementsBadgeSection/>
+                        <AchievementsCategoryScores/>
+                        <ChampionsBoard/>
+                    </>
+                }
+            />
         </Screen>
     )
 }
