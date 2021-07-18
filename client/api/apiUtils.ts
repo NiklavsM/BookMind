@@ -9,6 +9,6 @@ const getInit = (body?: any) => (
     }
 )
 export const callApi = (url: string, body?: any) => {
-    return fetch('https://levelupsociety.de.r.appspot.com/:3001' + url, getInit(body))
+    return fetch('http://10.0.2.2:3000/' + url, getInit(body))
         .then(response => response.json());
 }
