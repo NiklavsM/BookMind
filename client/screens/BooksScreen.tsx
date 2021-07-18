@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         height: '100%',
         paddingLeft: '8%',
         paddingRight: '5%',
-
+        backgroundColor: 'white'
     }
 });
 

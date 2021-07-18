@@ -9,11 +9,13 @@ const PointsCircle = () => {
             height: 60,
 
             borderRadius: 30,
-            backgroundColor: '#2d2d2d',
+            borderWidth: 2,
+            borderColor: '#124BDD',
+            backgroundColor: '#F5F9FF',
             justifyContent: 'center'
         }}>
-            <Text style={{fontSize: 14, textAlign: 'center', color: 'white'}}>20</Text>
-            <Text style={{fontSize: 14, textAlign: 'center', color: 'white'}}>points</Text>
+            <Text style={{fontSize: 14, textAlign: 'center', color: '#124BDD', fontWeight: 'bold'}}>20</Text>
+            <Text style={{fontSize: 14, textAlign: 'center', color: '#124BDD'}}>points</Text>
         </View>
     )
 }

@@ -5,8 +5,8 @@ import EmptyFeed from './EmptyFeed';
 
 const ChampionsBoard = () => {
 
-    const [selected, changeSelected] = useState('OVERALL');
-    const [cat, changeCat] = useState("APPROVED");
+    const [selected, changeSelected] = useState('0');
+    const [cat, changeCat] = useState("OVERALL");
 
     const items = [
         {
@@ -93,8 +93,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         fontWeight: 'bold',
-
-
     },
     optionSelected: {
         color: "#000000",
