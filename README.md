@@ -64,7 +64,7 @@ It doesn't work if you just click on it, it needs to be pasted in manually
 <h2>Visuals</h2>
 
 <p>
-<img src="AcceptChallenge.gif"/ width="31%">
-<img src="client/Assets/team.png"/ width="32.35%">
- <img src="client/Assets/company.png"/ width="32.35%">
+<img src="dashboardScreen.gif"/ width="32.35%">
+<img src="adventureScreen.gif"/ width="32.35%">
+ <img src="achievementsScreen.gif"/ width="32.35%">
 </p>
