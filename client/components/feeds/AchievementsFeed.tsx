@@ -6,17 +6,18 @@ const achievementsData = [
     {
         description: "Did your first 100 questions",
         date: "19th of July 2021",
-        source: require("../../assets/images/SilverMedal.png"),
+        source: "https://media.giphy.com/media/Xz4nrKGYIttw65Rm2Q/giphy.gif"
     },
     {
         description: "Got 1000 question upvotes",
         date: "19th of July 2021",
-        source: require("../../assets/images/GoldMedal.png"),
+        source: "https://media.giphy.com/media/im9e9e7jwWdel8PJO4/giphy.gif"
     },
     {
         description: "Did quiz a day challange",
         date: "19th of July 2021",
-        source: require("../../assets/images/BronzeMedal.png"),
+        source: "https://media.giphy.com/media/JFdqqYDTocJaNgdfxZ/giphy.gif"
+
     },
 ]
 
