@@ -30,4 +30,33 @@ Book Mind solves the problems above by:
 
 
 <br>
+ <h2>Technologies</h2>
+ Within 2 days we managed to build an mvp with fully working core functionality.
+ <br>
+ <h3>You can download out app by pasting this url in the browser on mobile</h3>
+ <br>
+ https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40alinavarkki/BookMind-b484084817014799b7c6d80002480b41-signed.apk
+<br>
+It doesn't work if you just click on it, needs to be pasted in manually
+<ul>
+  <li>react native <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/></li>
+ <li>Google Books Api</li> 
+ <li>Google Cloud for backend hosting</li> 
+ <li>Expo</li>
+  <li>NodeJS</li>
+ <li>MongoDb database</li>
+ <li>Express-formidable (minimalist web framework for Node.js.It  is a Node.js module for parsing form data)</li>
+ <li>Apisauce(Axios wrapper)</li>
+ <li>multiple libraries</li>
+</ul>  
+     <h4>Design:</h4>
+
+<ul>
+  <li>Illustrator</li>
+  <li>Figma</li>
+ <li>Photoshop</li>
+</ul>  
+</p>
+
+<br>
 <br>
