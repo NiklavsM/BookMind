@@ -28,7 +28,7 @@ const DashboardScreen = ({navigation}: NavigationInjectedProps) => {
                 ListHeaderComponent={
                     <View>
 
-                        <TrendingBooksSection/>
+                        <TrendingBooksSection navigation={navigation}/>
                         <AchievementsSection/>
                         <ChallengeSection/>
                         <ActionSection/>

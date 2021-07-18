@@ -10,11 +10,7 @@ interface BookScreen {
 }
 
 const BookScreen = ({route, navigation}: BookScreen & NavigationInjectedProps) => {
-    const title = route.params[0];
-    const author = route.params[1];
-    const imgUrl = route.params[2];
-    const category = route.params[3];
-    const description = route.params[4];
+    const {title, author, imgUrl, category, description} = route.params;
     return (
         <View style={styles.screen}>
             <ScrollView showsVerticalScrollIndicator={false}>

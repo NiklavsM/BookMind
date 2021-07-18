@@ -26,7 +26,7 @@ const DashboardStack = () => {
     return (
         <Stack.Navigator initialRouteName="Dashboard" screenOptions={{headerShown: false}}>
             <Stack.Screen name="Dashboard" component={DashboardScreen}/>
-            <Stack.Screen name="BookQuiz" component={QuizScreen} options={StackScreenOptions}/>
+            <Stack.Screen name="Book Quiz" component={QuizScreen} options={StackScreenOptions}/>
             <Stack.Screen name="QuizComplete" component={QuizCompleteScreen}/>
             <Stack.Screen name="Books" component={BooksScreen} options={StackScreenOptions}/>
             <Stack.Screen name="Book" component={BookScreen} options={StackScreenOptions}/>

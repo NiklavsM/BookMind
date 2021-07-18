@@ -36,7 +36,7 @@ const CoverButtonsSection = ({title, imgUrl, navigation}: CoverButtonsSection & 
                         style={{...styles.button, opacity: questions.length == 0 ? 0.4 : 1}}
                         disabled={questions.length == 0}
                         onPress={() => {
-                            navigation.navigate("BookQuiz", {allQuestions: questions})
+                            navigation.navigate("Book Quiz", {allQuestions: questions})
                             console.log("clicked")
                         }}>
                         <Text>Take a quiz</Text>

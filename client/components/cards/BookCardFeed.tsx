@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native"
+import {StyleSheet, Text, TouchableWithoutFeedback, View} from "react-native"
 import BookWithPointsInFeed from './cardParts/BookWithPointsInFeed';
-import { NavigationInjectedProps } from 'react-navigation';
+import {NavigationInjectedProps} from 'react-navigation';
 
 
 interface BookCardFeedProps {
@@ -22,13 +22,7 @@ const BookCardFeed = ({
                           navigation
                       }: BookCardFeedProps & NavigationInjectedProps) => {
 
-    const info = [
-        title,
-        author,
-        imgUrl,
-        category,
-        description
-    ]
+    const info = {title, author, imgUrl, category, description}
 
     return (
         <TouchableWithoutFeedback onPress={() => {

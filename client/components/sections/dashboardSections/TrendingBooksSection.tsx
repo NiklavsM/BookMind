@@ -2,7 +2,7 @@ import * as React from 'react';
 import {StyleSheet, Text, View} from "react-native"
 import TrendingBooksFeed from '../../feeds/TrendingBooksFeed';
 
-const TrendingBooksSection = () => {
+const TrendingBooksSection = ({navigation}) => {
 
     return (
         <View style={styles.container}>
@@ -13,7 +13,7 @@ const TrendingBooksSection = () => {
                 </View>
                 <Text style={styles.regularText}>Some text</Text>
             </View>
-            <TrendingBooksFeed/>
+            <TrendingBooksFeed navigation={navigation}/>
         </View>
     )
 }

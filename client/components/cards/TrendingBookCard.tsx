@@ -1,15 +1,14 @@
 import * as React from 'react';
-import { Image, StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native"
-import ColourPalette from '../../assets/ColourPalette';
+import {Image, StyleSheet, Text, TouchableWithoutFeedback, View} from "react-native"
 
-const TrendingBookCard = ({name}: any) => {
+const TrendingBookCard = ({name, url, onClick}: any) => {
 
     return (
-        <TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={onClick}>
             <View style={styles.card}>
                 <View style={styles.upperPart}>
                     <Image style={styles.image}
-                           source={{uri: 'https://s26162.pcdn.co/wp-content/uploads/2019/12/46301955-668x1024.jpg'}}/>
+                           source={{uri: url}}/>
                 </View>
                 <View style={styles.lowerPart}>
                     <Text style={styles.boldText}>{name}</Text>
@@ -40,7 +39,8 @@ const styles = StyleSheet.create({
     },
     boldText: {
         fontWeight: 'bold',
-        fontSize: 16
+        fontSize: 16,
+        alignSelf: "center",
     }
 })
 
