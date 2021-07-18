@@ -31,16 +31,16 @@ const CoverButtonsSection = ({title, imgUrl, navigation}: CoverButtonsSection & 
             <View style={styles.coverAndQuestions}>
                 <BookWIthPointsCardFullBookScreen imgUrl={imgUrl}/>
                 <View style={styles.buttons}>
-                    {questions.length > 0 &&
+                    {questions.length == 0 && <Text style={{width:120}}>Be the first to add a question!</Text>}
                     <TouchableOpacity
-                        style={styles.button}
+                        style={{...styles.button, opacity: questions.length == 0 ? 0.4 : 1}}
+                        disabled={questions.length == 0}
                         onPress={() => {
                             navigation.navigate("BookQuiz", {allQuestions: questions})
                             console.log("clicked")
                         }}>
                         <Text>Take a quiz</Text>
                     </TouchableOpacity>
-                    }
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => {
