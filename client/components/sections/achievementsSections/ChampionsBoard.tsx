@@ -1,33 +1,113 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from "react-native"
+import { useState } from 'react';
+import { FlatList, StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native"
+import EmptyFeed from './EmptyFeed';
 
 const ChampionsBoard = () => {
 
+    const [selected, changeSelected] = useState('1');
+    const [cat, changeCat] = useState("APPROVED");
+
+    const items = [
+        {
+            id: '0',
+            name: 'OVERALL',
+        },
+        {
+            id: '1',
+            name: 'POLITICS',
+        },
+        {
+            id: '2',
+            name: 'SCIENCE',
+        },
+        {
+            id: '3',
+            name: 'HISTORY',
+        },
+        {
+            id: '4',
+            name: 'PERSONAL DEVELOPMENT',
+
+        },
+        {
+            id: '5',
+            name: 'FICTION',
+        }]
+
+    const renderCategories = ({item}) => {
+        if (item.id === selected) {
+            return (
+                <TouchableWithoutFeedback onPress={() => switchCats(item)}>
+                    <Text style={styles.optionSelected}>{item.name}</Text>
+                </TouchableWithoutFeedback>
+            );
+
+        } else {
+            return (
+                <TouchableWithoutFeedback onPress={() => switchCats(item)}>
+                    <Text style={styles.option}>{item.name}</Text>
+                </TouchableWithoutFeedback>
+            )
+
+        }
+    }
+
+    const switchCats = (item) => {
+        changeSelected(item.id);
+        changeCat(item.name)
+    };
+
+
     return (
         <View>
-            <Text>Bookworm Champions board</Text>
+            <Text style={styles.headerText}>Bookworm Champions board</Text>
+            <FlatList
+                data={items}
+                renderItem={renderCategories}
+                keyExtractor={item => item.id}
+                horizontal={true}
+            />
+            <View style={{flex: 1}}>
+                { selected!=='1' ?  <EmptyFeed category={cat}/> : <EmptyFeed category="OVERALL"/> }
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingBottom: 50
-    },
     headerText: {
-        fontSize: 30,
+        fontSize: 24,
         fontWeight: 'bold',
-        alignSelf: 'flex-end'
+        paddingBottom: 20
     },
-    image: {
-        width: 50,
-        height: 50,
-        borderRadius: 25,
-        overflow: 'hidden',
-        borderWidth: 0.3,
-        borderColor: 'grey',
+    option: {
+        color: 'black',
+        fontSize: 15,
+        paddingVertical: 10,
+        paddingHorizontal: 15,
+        borderWidth: 1,
+        margin: 7,
+        borderRadius: 14,
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontWeight: 'bold',
+
+
+    },
+    optionSelected: {
+        color: "#000000",
+        fontSize: 15,
+        fontWeight: 'bold',
+        paddingVertical: 10,
+        paddingHorizontal: 15,
+        backgroundColor: "#F5F9FF",
+        borderWidth: 1,
+        borderColor: "#124BDD",
+        margin: 7,
+        borderRadius: 14,
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 });
 
