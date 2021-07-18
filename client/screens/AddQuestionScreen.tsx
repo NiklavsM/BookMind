@@ -1,28 +1,29 @@
 import * as React from "react";
 import {useState} from "react";
-import {StyleSheet, Text, TextInput, TouchableOpacity} from "react-native"
+import {Image, StyleSheet, Text, TextInput, TouchableOpacity} from "react-native"
 import Screen from "../components/Screen";
 import {addQuestion} from "../api/questionApi";
 import Toast from "react-native-toast-message";
 import {NavigationInjectedProps} from "react-navigation";
+import {buttonHeight} from "../assets/sizesConstants";
 
-const AddQuestionScreen = ({route, navigation} : NavigationInjectedProps & any) => {
+const AddQuestionScreen = ({route, navigation}: NavigationInjectedProps & any) => {
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState("");
     const [optionTwo, setOptionTwo] = useState("");
     const [optionThree, setOptionThree] = useState("");
-    const [optionFour, setOptionFour] = useState("");
+    // const [optionFour, setOptionFour] = useState("");
 
     const onSave = () => {
         addQuestion({
             title: route.params.title,
             correct_option: answer,
-            options: [answer, optionTwo, optionThree, optionFour],
+            options: [answer, optionTwo, optionThree],
             question,
         })
         Toast.show({
-            type:'success',
-            position:'bottom',
+            type: 'success',
+            position: 'bottom',
             text1: 'Question Added',
         });
         navigation.goBack();
@@ -30,7 +31,7 @@ const AddQuestionScreen = ({route, navigation} : NavigationInjectedProps & any) 
 
     return (
         <Screen>
-            <Text style={styles.championText}>Question</Text>
+            <Text style={styles.championText}>Your question</Text>
             <TextInput
                 maxLength={200}
                 multiline numberOfLines={4}
@@ -60,25 +61,29 @@ const AddQuestionScreen = ({route, navigation} : NavigationInjectedProps & any) 
                 value={optionThree}
                 onChangeText={setOptionThree}
             />
-            <TextInput
-                maxLength={40}
-                style={styles.singleLineInput}
-                value={optionFour}
-                onChangeText={setOptionFour}
-            />
+            {/*<TextInput*/}
+            {/*    maxLength={40}*/}
+            {/*    style={styles.singleLineInput}*/}
+            {/*    value={optionFour}*/}
+            {/*    onChangeText={setOptionFour}*/}
+            {/*/>*/}
+
             <TouchableOpacity
                 style={styles.saveButton}
                 onPress={onSave}
             >
-                <Text>Save</Text>
+                <Text style={{fontWeight: "bold"}}>Done</Text>
             </TouchableOpacity>
+            <Image source={require("../assets/images/dcasd.png")}/>
         </Screen>
     )
 }
 
 const styles = StyleSheet.create({
     championText: {
-        fontWeight: "bold"
+        fontSize:18,
+        fontWeight: "bold",
+        marginLeft: 12,
     },
     multilineInput: {
         height: 80,
@@ -96,13 +101,18 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     saveButton: {
-        width: 100,
-        height: 30,
+        marginTop: 50,
+        marginRight: 15,
+        width: 90,
+        height: buttonHeight,
         borderStyle: "solid",
+        borderRadius: 10,
         borderColor: "black",
         borderWidth: 1,
         alignContent: "center",
         alignItems: "center",
+        justifyContent: "center",
+        alignSelf: "flex-end",
     }
 });
 
