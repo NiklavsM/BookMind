@@ -14,13 +14,11 @@ const PointsCircle = () => {
             height: 60,
 
             borderRadius: 30,
-            borderWidth: 2,
-            borderColor: '#124BDD',
-            backgroundColor: '#F5F9FF',
+            backgroundColor: '#2C80FD',
             justifyContent: 'center'
         }}>
-            <Text style={{fontSize: 14, textAlign: 'center', color: '#124BDD', fontWeight: 'bold'}}>{Math.round(getRandomArbitrary(20, 35))}</Text>
-            <Text style={{fontSize: 14, textAlign: 'center', color: '#124BDD'}}>points</Text>
+            <Text style={{fontSize: 14, textAlign: 'center', color: 'white', fontWeight: 'bold'}}>{Math.round(getRandomArbitrary(20, 35))}</Text>
+            <Text style={{fontSize: 14, textAlign: 'center', color: 'white'}}>points</Text>
         </View>
     )
 }

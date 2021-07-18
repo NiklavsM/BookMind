@@ -31,7 +31,7 @@ const CoverButtonsSection = ({title, imgUrl, navigation}: CoverButtonsSection & 
             <View style={styles.coverAndQuestions}>
                 <BookWIthPointsCardFullBookScreen imgUrl={imgUrl}/>
                 <View style={styles.buttons}>
-                    {questions.length == 0 && <Text style={{width:120}}>Be the first to add a question!</Text>}
+                    {questions.length == 0 && <Text style={styles.buttonText}>Be the first to add a question!</Text>}
                     <TouchableOpacity
                         style={{...styles.button, opacity: questions.length == 0 ? 0.4 : 1}}
                         disabled={questions.length == 0}
@@ -39,21 +39,21 @@ const CoverButtonsSection = ({title, imgUrl, navigation}: CoverButtonsSection & 
                             navigation.navigate("Book Quiz", {allQuestions: questions})
                             console.log("clicked")
                         }}>
-                        <Text>Take a quiz</Text>
+                        <Text style={styles.buttonText}>Take a quiz</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => {
                             navigation.navigate("Add Question", {title})
                         }}>
-                        <Text>Add a question</Text>
+                        <Text style={styles.buttonText}>Add a question</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => {
                             console.log("clicked")
                         }}>
-                        <Text>Challenge a friend!</Text>
+                        <Text style={styles.buttonText}>Challenge a friend!</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -69,8 +69,8 @@ const styles = StyleSheet.create({
     button: {
         height: 35,
         width: 150,
-        borderRadius: 3,
-        backgroundColor: "#dcdcdc",
+        borderRadius: 10,
+        backgroundColor: "#DFECFF",
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: '10%'
@@ -79,6 +79,9 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         marginBottom: 25,
 
+    },
+    buttonText:{
+        color:"#124BDD",
     }
 })
 
