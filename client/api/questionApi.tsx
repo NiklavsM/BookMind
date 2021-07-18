@@ -1,8 +1,5 @@
-import client from './client'
 import {QuestionI} from "../domain/QuestionI";
 import {callApi} from "./apiUtils";
-import { ApiResponse } from 'apisauce'
-
 
 export const getQuestions = (data) => {
     return callApi("getBookQuestions", data);

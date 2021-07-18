@@ -7,7 +7,7 @@ const AchievementCard = ({description, date, source}: any) => {
         <TouchableWithoutFeedback>
             <View style={styles.card}>
                 <View style={styles.upperPart}>
-                    <Image style={styles.image} source={source}/>
+                    <Image style={styles.image} source={{uri: source}}/>
                 </View>
                 <View style={styles.lowerPart}>
                     <Text style={{textAlign: "center",}}>{description}</Text>
