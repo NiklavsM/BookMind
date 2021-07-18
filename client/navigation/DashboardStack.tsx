@@ -32,7 +32,7 @@ const DashboardStack = () => {
             <Stack.Screen name="Books" component={BooksScreen} options={StackScreenOptions}/>
             <Stack.Screen name="Book" component={BookScreen} options={StackScreenOptions}/>
             <Stack.Screen name="Add Question" component={AddQuestionScreen} options={StackScreenOptions}/>
-            <Stack.Screen name="Animation" component={AfterQuizAnimation} options={StackScreenOptions}/>
+            <Stack.Screen name="AfterQuizAnimation" component={AfterQuizAnimation} options={StackScreenOptions}/>
         </Stack.Navigator>
     )
 }
