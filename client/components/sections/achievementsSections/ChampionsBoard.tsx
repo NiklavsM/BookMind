@@ -93,8 +93,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         fontWeight: 'bold',
-
-
     },
     optionSelected: {
         color: "#000000",

@@ -1,4 +1,8 @@
 import RatingCard from '../../cards/RatingCard';
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { FlatList } from "react-native"
+
 
 const EmptyFeed = ({category}) => {
 
@@ -62,9 +66,5 @@ const EmptyFeed = ({category}) => {
 
     )
 }
-import * as React from 'react';
-import { Text, View, StyleSheet, FlatList } from "react-native"
-
-import { useEffect, useState } from 'react';
 
 export default EmptyFeed;

@@ -105,7 +105,7 @@ const AdventuresScreen = ({navigation}: NavigationInjectedProps) => {
                 <Text style={{position: 'absolute', left: 160, top: 2070, fontWeight: 'bold'}}>SAPIENS</Text>
                 <Text style={{position: 'absolute', left: 160, top: 2085}}>19th July</Text>
 
-                <Image style={{width: 130, height: 130}} source={{uri:context.profileUrl}}/>
+                <Image style={{width: 130, height: 130, borderRadius: 65}} source={{uri:context.profileUrl}}/>
                 <Text style={{position: 'absolute', left: 290, top: 2170, fontWeight: 'bold'}}>YOU ARE HERE!</Text>
                 <Text style={{position: 'absolute', left: 290, top: 2185}}>What is next in</Text>
                 <Text style={{position: 'absolute', left: 290, top: 2200}}>your adventure?</Text>

@@ -36,7 +36,7 @@ const BookCardFeed = ({
                     <Text style={styles.title}>{title}</Text>
                     <Text style={styles.author}>{author}</Text>
                     <View style={styles.category}>
-                        <Text style={{margin: 20}}>{category}</Text>
+                        <Text style={{margin: 20, color: '#124BDD'}}>{category}</Text>
                     </View>
                 </View>
             </View>
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     category: {
         height: 35,
         borderRadius: 10,
-        backgroundColor: "#dcdcdc",
+        backgroundColor: "#f5f9ff",
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 20,

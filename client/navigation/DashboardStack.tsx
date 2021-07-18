@@ -10,8 +10,8 @@ import QuizCompleteScreen from "../quiz/screens/QuizCompleteScreen";
 const StackScreenOptions = {
     headerShown: true,
     headerStyle: {
-        backgroundColor: 'tomato',
-        height: 80,
+        backgroundColor: '#2C80FD',
+        height: 90,
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
