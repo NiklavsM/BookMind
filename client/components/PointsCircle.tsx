@@ -3,6 +3,9 @@ import { View, Text } from "react-native"
 
 const PointsCircle = () => {
 
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
 
 
     return (
@@ -16,7 +19,7 @@ const PointsCircle = () => {
             backgroundColor: '#F5F9FF',
             justifyContent: 'center'
         }}>
-            <Text style={{fontSize: 14, textAlign: 'center', color: '#124BDD', fontWeight: 'bold'}}>20</Text>
+            <Text style={{fontSize: 14, textAlign: 'center', color: '#124BDD', fontWeight: 'bold'}}>{Math.round(getRandomArbitrary(20, 35))}</Text>
             <Text style={{fontSize: 14, textAlign: 'center', color: '#124BDD'}}>points</Text>
         </View>
     )
